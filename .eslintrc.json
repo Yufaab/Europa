@@ -6,6 +6,7 @@
   "extends": ["plugin:react/recommended", "prettier", "airbnb"],
   "plugins": ["react", "prettier"],
   "rules": {
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "comma-dangle": "off"
   }
 }
