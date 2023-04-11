@@ -1,0 +1,62 @@
+.topContainerRegister{
+    display: flex;
+    height: 600px;
+    width: 50%;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8rem;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(53,105,128,.3), 0 6px 20px 0 rgba(165,200,213,.41);
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+.councellingHead{
+    font-size: 24px;
+    color: #4a4a4a;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 2em;
+    font-weight: bold;
+}
+.councellingForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.formInputs{
+    width: 50%;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    height: 40px;
+    padding: 9px 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    color: #33475b;
+    margin-bottom: 15px;
+    border-color: rgba(82,168,236,.8);
+    background-color: #f5f8fa;
+    border: 1px solid #cbd6e2;
+}
+.formInputsTextareaPlace{
+    height: 100px ;
+    resize: none;
+}
+.formCouncellingSubmitButton{
+    display: flex;
+    background-color: aqua;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 10px;
+    height: 40px;
+    border-radius: 5px;
+    color: #4a4a4a;
+    align-items: center;
+    font-size: 20px;
+}

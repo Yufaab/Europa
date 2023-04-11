@@ -1,11 +1,21 @@
-import './App.css';
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RegisterCouncelling from './components/RegisterCouncelling';
+import Home from './screens/Home';
 
 function App() {
   return (
-    <div className="m-2 text-9xl w-screen flex justify-center text-red-400">
-      Hello world!
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route
+            path="/registercouncelling"
+            element={<RegisterCouncelling />}
+          />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
