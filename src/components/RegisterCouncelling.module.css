@@ -6,7 +6,9 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 8rem;
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(53,105,128,.3), 0 6px 20px 0 rgba(165,200,213,.41);
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 .councellingHead{
     font-size: 24px;
@@ -15,6 +17,8 @@
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 10px;
+    font-size: 2em;
+    font-weight: bold;
 }
 .councellingForm{
     display: flex;
@@ -28,14 +32,17 @@
     margin-right: auto;
     align-items: center;
     height: 40px;
-    padding: 3px;
+    padding: 9px 10px;
     border: 1px solid gray;
-    border-radius: 5px;
-    color: #4a4a4a;
+    border-radius: 3px;
+    color: #33475b;
     margin-bottom: 15px;
+    border-color: rgba(82,168,236,.8);
+    background-color: #f5f8fa;
+    border: 1px solid #cbd6e2;
 }
 .formInputsTextareaPlace{
-    height: 80px ;
+    height: 100px ;
     resize: none;
 }
 .formCouncellingSubmitButton{
