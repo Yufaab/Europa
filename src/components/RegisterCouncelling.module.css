@@ -1,0 +1,55 @@
+.topContainerRegister{
+    display: flex;
+    height: 600px;
+    width: 50%;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8rem;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+.councellingHead{
+    font-size: 24px;
+    color: #4a4a4a;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.councellingForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.formInputs{
+    width: 50%;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    height: 40px;
+    padding: 3px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+}
+.formInputsTextareaPlace{
+    height: 80px ;
+    resize: none;
+}
+.formCouncellingSubmitButton{
+    display: flex;
+    background-color: aqua;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 10px;
+    height: 40px;
+    border-radius: 5px;
+    color: #4a4a4a;
+    align-items: center;
+    font-size: 20px;
+}
