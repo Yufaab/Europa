@@ -9,27 +9,32 @@ function RegisterCouncelling() {
       <form className="flex flex-col items-center mt-[20px] ">
         <input
           type="text"
+          required="true"
           placeholder="Full Name"
           className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-[rgba(82,168,236,.8)] border-t-[1px] rounded-[7px] outline-none text-[#33475b]"
         />
         <input
           type="email"
+          required="true"
           placeholder="Email"
           className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[12px] bg-[#f5f8fa] border-[rgba(82,168,236,.8)] border-t-[1px] rounded-[3px] outline-none text-[#33475b]"
         />
         <input
           type="text"
           placeholder="Mobile Number"
+          required="true"
           className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[12px] bg-[#f5f8fa] border-[rgba(82,168,236,.8)] border-t-[1px] rounded-[3px] outline-none text-[#33475b]"
         />
         <input
           type="text"
           placeholder="City/State"
+          required="true"
           className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[12px] bg-[#f5f8fa] border-[rgba(82,168,236,.8)] border-t-[1px] rounded-[3px] outline-none text-[#33475b]"
         />
         <input
           type="text"
           placeholder="Rank"
+          required="true"
           className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[12px] bg-[#f5f8fa] border-[rgba(82,168,236,.8)] border-t-[1px] rounded-[3px] outline-none text-[#33475b]"
         />
         <textarea
