@@ -8,9 +8,11 @@
   "rules": {
     "react/jsx-filename-extension": "off",
     "comma-dangle": "off",
-    "linebreak-style":["off", "windows"],
+    "linebreak-style": ["off", "windows"],
     "jsx-a11y/anchor-is-valid": "off",
     "react/function-component-definition": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "react/prop-types": "off",
+    "arrow-body-style": ["error", "always"]
   }
 }

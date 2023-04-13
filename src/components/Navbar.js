@@ -7,7 +7,7 @@ export default function NavBar() {
 
   return (
     <nav className="w-full bg-gradient-to-b from-black absolute ">
-      <div className="justify-between px-4 mx-auto lg:max-w-8xl md:items-center md:flex md:px-8">
+      <div className="justify-between px-4 mx-auto lg:max-w-8xl md:items-center md:flex md:px-8 ">
         <div>
           <div className="flex items-center justify-between md:py-5 md:block">
             <a href="#">
@@ -18,7 +18,9 @@ export default function NavBar() {
               <button
                 type="button"
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                onClick={() => setNavbar(!navbar)}
+                onClick={() => {
+                  setNavbar(!navbar);
+                }}
               >
                 {navbar ? (
                   <svg
@@ -80,14 +82,18 @@ export default function NavBar() {
             <a
               href="#"
               className="px-4 py-2 text-white bg-[#0098FF] rounded-md hover:bg-blue-600"
-              onClick={() => setProfile(!profile)}
+              onClick={() => {
+                setProfile(!profile);
+              }}
             >
               Sign in
             </a>
           ) : (
             <button
               type="button"
-              onClick={() => setProfile(!profile)}
+              onClick={() => {
+                setProfile(!profile);
+              }}
               className="mx-7 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
             >
               <svg
