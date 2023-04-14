@@ -12,14 +12,14 @@ function RegisterCouncelling() {
       <form className="flex flex-col items-center mt-[20px] ">
         <input
           type="text"
-          placeholder="Full Name"
           required="true"
+          placeholder="Full Name"
           className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-none text-[#33475b]"
         />
         <input
           type="email"
-          placeholder="Email"
           required="true"
+          placeholder="Email"
           className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[12px] bg-[#f5f8fa] border-t-[1px] rounded-[3px] outline-none text-[#33475b]"
         />
         <input
