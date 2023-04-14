@@ -10,7 +10,9 @@
     "comma-dangle": "off",
     "import/no-extraneous-dependencies" : "off",
     "no-console": "off",
-    "react/no-this-in-sfc":"off"
+    "react/no-this-in-sfc":"off",
+    "react/function-component-definition": "off",
+    "no-underscore-dangle": "off"
   }
 }
   
