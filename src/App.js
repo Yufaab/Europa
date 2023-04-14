@@ -8,10 +8,10 @@ import { YufaabInstanceProvider } from './context/YufaabContext';
 import YufaabInstance from './lib/api';
 
 const App = () => {
-  const yufaabInstance = new YufaabInstance('http://localhost:1337');
+  const yufaabInstance = new YufaabInstance(process.env.REACT_APP_BACKEND_URL);
 
   return (
-    <GoogleOAuthProvider clientId="338277030676-4vv7ej7qd4a4980qlqmonemtnk2p4cat.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
       <YufaabInstanceProvider value={{ yufaabInstance }}>
         <Router>
           <div className="App">
