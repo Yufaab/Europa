@@ -7,7 +7,10 @@
   "plugins": ["react", "prettier"],
   "rules": {
     "react/jsx-filename-extension": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "import/no-extraneous-dependencies" : "off",
+    "no-console": "off",
+    "react/no-this-in-sfc":"off"
   }
 }
   
