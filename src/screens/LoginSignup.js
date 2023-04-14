@@ -5,9 +5,11 @@ import YufaabContext from '../context/YufaabContext';
 const LoginSinup = () => {
   const { yufaabInstance } = useContext(YufaabContext);
   const [isMember, setIsMember] = useState(false);
+
   const toggle = () => {
     setIsMember((member) => !member);
   };
+
   const login = useGoogleLogin({
     onSuccess: async (codeResponse) => {
       let res;
@@ -24,6 +26,9 @@ const LoginSinup = () => {
     },
     onError: (error) => console.log('Login Failed:', error),
   });
+
+  const submitHandler = () => {};
+
   return (
     <div className="flex flex-col mx-auto mt-[128px] h-[600px] w-[600px]">
       <h3 className="mx-auto text-[48px] text-[#0098FF] font-semibold mt-[20px]">
@@ -32,7 +37,10 @@ const LoginSinup = () => {
       <h3 className="flex mx-auto mt-[15px] text-[24px] text-[#4a4a4a] font-semibold">
         {isMember ? 'Login' : 'Register'}
       </h3>
-      <form className="flex flex-col items-center mt-[20px]">
+      <form
+        className="flex flex-col items-center mt-[20px]"
+        onSubmit={submitHandler}
+      >
         {!isMember && (
           <input
             className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-none text-[#33475b]"
