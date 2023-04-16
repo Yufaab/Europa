@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         krub: ['Krub', 'sans-serif'],
       },
+      colors: {
+        primary: '#0098FF',
+      },
     },
     plugins: [],
   },
