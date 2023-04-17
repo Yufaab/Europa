@@ -6,7 +6,7 @@ export default function NavBar() {
   const [profile, setProfile] = useState(false);
 
   return (
-    <nav className="w-full bg-gradient-to-b from-black absolute">
+    <nav className="w-full bg-gradient-to-b from-black fixed top-0">
       <div className="justify-between px-4 mx-auto lg:max-w-8xl md:items-center md:flex md:px-8 ">
         <div>
           <div className="flex items-center justify-between md:py-5 md:block">

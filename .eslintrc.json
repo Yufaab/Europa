@@ -10,7 +10,6 @@
     "comma-dangle": "off",
     "linebreak-style": ["off", "windows"],
     "jsx-a11y/anchor-is-valid": "off",
-    "react/function-component-definition": "off",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
     "arrow-body-style": ["error", "always"],
@@ -20,6 +19,11 @@
         "component": true,
         "html": false
       }
-    ]
+    ],
+    "import/no-extraneous-dependencies": "off",
+    "no-console": "off",
+    "react/no-this-in-sfc": "off",
+    "react/function-component-definition": "off",
+    "no-underscore-dangle": "off"
   }
 }
