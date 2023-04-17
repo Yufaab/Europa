@@ -7,7 +7,7 @@ const LoginSinup = () => {
   const [isMember, setIsMember] = useState(false);
 
   const toggle = () => {
-    setIsMember((member) => !member);
+    setIsMember(!isMember);
   };
 
   const login = useGoogleLogin({
@@ -24,7 +24,9 @@ const LoginSinup = () => {
       }
       console.log(res);
     },
-    onError: (error) => console.log('Login Failed:', error),
+    onError: (error) => {
+      console.log('Login Failed:', error);
+    },
   });
 
   const submitHandler = () => {};
@@ -47,7 +49,6 @@ const LoginSinup = () => {
             type="text"
             name="name"
             placeholder="First Name"
-            required="true"
           />
         )}
         {!isMember && (
@@ -56,7 +57,6 @@ const LoginSinup = () => {
             type="text"
             name="name"
             placeholder="Last Name"
-            required="true"
           />
         )}
         <input
@@ -64,7 +64,6 @@ const LoginSinup = () => {
           type="email"
           name="email"
           placeholder="Email"
-          required="true"
         />
         {!isMember && (
           <input
@@ -72,7 +71,6 @@ const LoginSinup = () => {
             type="text"
             name="name"
             placeholder="Phone Number"
-            required="true"
           />
         )}
         <input
@@ -80,7 +78,6 @@ const LoginSinup = () => {
           type="password"
           name="password"
           placeholder="Password"
-          required="true"
         />
         <button
           type="submit"
