@@ -4,7 +4,7 @@ export const Rank = ({ formData, setFormData }) => {
   return (
     <div className="flex flex-col mt-[20px]">
       <input
-        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
+        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-slate-700"
         type="text"
         placeholder="Rank"
         value={formData.rank}
@@ -17,7 +17,7 @@ export const Rank = ({ formData, setFormData }) => {
 };
 export const Category = ({ formData, setFormData }) => {
   return (
-    <div className="mt-[20px]">
+    <div className="mt-[10px] text-slate-700">
       <input
         className="mb-[12px]"
         type="radio"
@@ -102,7 +102,7 @@ export const CategoryRank = ({ formData, setFormData }) => {
   return (
     <div className="flex flex-col mt-[20px]">
       <input
-        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
+        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-slate-700"
         type="text"
         placeholder="Category Rank"
         value={formData.categoryRank}
@@ -143,7 +143,7 @@ export const State = ({ formData, setFormData }) => {
   return (
     <div className="flex flex-col mt-[20px]">
       <input
-        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
+        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-slate-700"
         type="text"
         placeholder="State"
         value={formData.state}
@@ -154,15 +154,22 @@ export const State = ({ formData, setFormData }) => {
     </div>
   );
 };
-export const Branches = () => {
+export const Branches = ({ formData, setFormData }) => {
   return (
-    <div className="flex flex-col mt-[20px]">
-      <select>
+    <div className="flex flex-col mt-[20px] text-slate-700">
+      <select
+        className="w-auto overflow-hidden text-slate-700"
+        onChange={(e) => {
+          setFormData({ ...formData, branch: e.target.value });
+        }}
+      >
         {customData.branches2022.map((item) => (
-          <option value={item}>{item}</option>
+          <option key={item} value={formData.item} className="w-[300px] max-w-[300px] text-ellipsis text-[14px] overflow-hidden">
+            {item}
+          </option>
         ))}
       </select>
     </div>
   );
 };
-export default { Rank, Category, CategoryRank, Gender, IsPWD, State };
+export default { Rank, Category, CategoryRank, Gender, IsPWD, State, Branches };
