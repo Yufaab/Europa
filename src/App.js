@@ -7,6 +7,7 @@ import { YufaabInstanceProvider } from './context/YufaabContext';
 import YufaabInstance from './lib/api';
 import { Card, NavBar } from './components';
 import { Home } from './screens';
+import Details from './screens/Details';
 
 const App = () => {
   const yufaabInstance = new YufaabInstance(process.env.REACT_APP_BACKEND_URL);
@@ -18,6 +19,7 @@ const App = () => {
           <div className="App">
             <NavBar />
             <Routes>
+              <Route path="/details" element={<Details />} />
               <Route path="/login" element={<LoginSignup />} />
               <Route
                 path="/registercouncelling"

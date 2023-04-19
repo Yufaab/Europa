@@ -10,10 +10,10 @@ export default function NavBar() {
       <div className="justify-between px-4 mx-auto lg:max-w-8xl md:items-center md:flex md:px-8 ">
         <div>
           <div className="flex items-center justify-between md:py-5 md:block">
-            <a href="#">
-              <img src={Logo} alt="logo" className="absolute my-[-20px]" />
-              <h2 className="text-2xl font-bold text-black">LOGO</h2>
-            </a>
+            <img src={Logo} alt="logo" className="relative my-[-20px]" />
+            <h2 className="absolute text-2xl font-medium text-[#fff] my-[-60px] mx-[90px]">
+              Yufaab
+            </h2>
             <div className="md:hidden">
               <button
                 type="button"
