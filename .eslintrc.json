@@ -12,7 +12,7 @@
     "jsx-a11y/anchor-is-valid": "off",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
-    "arrow-body-style": ["error", "always"],
+    "arrow-body-style": "off",
     "react/self-closing-comp": [
       "error",
       {
@@ -24,6 +24,14 @@
     "no-console": "off",
     "react/no-this-in-sfc": "off",
     "react/function-component-definition": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "react/react-in-jsx-scope":"off",
+    "react/jsx-no-constructed-context-values":"off",
+    "react/no-unstable-nested-components":"off",
+    "no-else-return":"off",
+    "no-nested-ternary":"off",
+    "no-alert":"off",
+    "react/style-prop-object":"off",
+    "object-curly-newline":"off"
   }
 }
