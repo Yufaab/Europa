@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Category, CategoryRank, Gender, Rank, IsPWD, State, Branches } from '../components/DetailsComponents';
 
-function Formm() {
+function Details() {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     rank: '',
@@ -89,4 +89,4 @@ function Formm() {
   );
 }
 
-export default Formm;
+export default Details;
