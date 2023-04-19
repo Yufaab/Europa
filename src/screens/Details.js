@@ -15,21 +15,15 @@ function Details() {
 
   const FormTitles = ['Enter your rank', 'Please choose your category', 'Please select your gender', 'Category Rank if applicable', 'Are you physically disabled?', 'Enter your State', 'Please select preferred Branch'];
 
-  const PageDisplay = () => {
-    if (page === 0) {
-      return <Rank formData={formData} setFormData={setFormData} />;
-    } else if (page === 1) {
-      return <Category formData={formData} setFormData={setFormData} />;
-    } else if (page === 2) {
-      return <Gender formData={formData} setFormData={setFormData} />;
-    } else if (page === 3) {
-      return <CategoryRank formData={formData} setFormData={setFormData} />;
-    } else if (page === 4) {
-      return <IsPWD formData={formData} setFormData={setFormData} />;
-    } else if (page === 5) {
-      return <State formData={formData} setFormData={setFormData} />;
-    } else {
-      return <Branches formData={formData} setFormData={setFormData} />;
+  const SwitchPage = () => {
+    switch (page) {
+      case 0: return <Rank formData={formData} setFormData={setFormData} />;
+      case 1: return <Category formData={formData} setFormData={setFormData} />;
+      case 2: return <Gender formData={formData} setFormData={setFormData} />;
+      case 3: return <CategoryRank formData={formData} setFormData={setFormData} />;
+      case 4: return <IsPWD formData={formData} setFormData={setFormData} />;
+      case 5: return <State formData={formData} setFormData={setFormData} />;
+      default: return <Branches formData={formData} setFormData={setFormData} />;
     }
   };
   return (
@@ -49,7 +43,7 @@ function Details() {
         <div className="basis-auto flex text-[#000] mt-auto text-[20px]">
           <h1>{FormTitles[page]}</h1>
         </div>
-        <div className="basis-[70%]">{PageDisplay()}</div>
+        <div className="basis-[70%]">{SwitchPage()}</div>
         <div className="basis-[10%] flex justify-between">
           <button
             className="h-[30px] w-[70px] text-center items-center hover:bg-sky-700 bg-[#0098FF] rounded-[3px] p-[3px] justify-items-center text-[#fff] font-medium"
