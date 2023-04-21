@@ -1,4 +1,5 @@
-import customData from './branch.json';
+import BranchData from './branch.json';
+import IndStates from './states.json';
 
 export const Rank = ({ formData, setFormData }) => {
   return (
@@ -141,16 +142,19 @@ export const IsPWD = ({ formData, setFormData }) => {
 };
 export const State = ({ formData, setFormData }) => {
   return (
-    <div className="flex flex-col mt-[20px]">
-      <input
-        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-slate-700"
-        type="text"
-        placeholder="State"
-        value={formData.state}
+    <div className="flex flex-col mt-[20px] text-slate-700">
+      <select
+        className="w-auto overflow-hidden text-slate-700 text-[15px] p-[5px] rounded-md"
         onChange={(e) => {
           setFormData({ ...formData, state: e.target.value });
         }}
-      />
+      >
+        {IndStates.IndianStates.map((item) => (
+          <option key={item} value={formData.item} className="w-[300px] max-w-[300px] text-ellipsis text-[14px] overflow-hidden">
+            {item}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };
@@ -158,12 +162,12 @@ export const Branches = ({ formData, setFormData }) => {
   return (
     <div className="flex flex-col mt-[20px] text-slate-700">
       <select
-        className="w-auto overflow-hidden text-slate-700"
+        className="w-auto overflow-hidden text-slate-700 p-[5px] rounded-md"
         onChange={(e) => {
           setFormData({ ...formData, branch: e.target.value });
         }}
       >
-        {customData.branches2022.map((item) => (
+        {BranchData.branches2022.map((item) => (
           <option key={item} value={formData.item} className="w-[300px] max-w-[300px] text-ellipsis text-[14px] overflow-hidden">
             {item}
           </option>

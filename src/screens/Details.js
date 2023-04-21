@@ -13,7 +13,7 @@ function Details() {
     branch: ''
   });
 
-  const FormTitles = ['Enter your rank', 'Please choose your category', 'Please select your gender', 'Category Rank if applicable', 'Are you physically disabled?', 'Enter your State', 'Please select preferred Branch'];
+  const FormTitles = ['Enter your rank', 'Choose your category', 'Select your gender', 'Category Rank if applicable', 'Are you physically disabled?', 'Select your State', 'Select your preferred Branch'];
 
   const SwitchPage = () => {
     switch (page) {
