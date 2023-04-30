@@ -36,7 +36,7 @@ const LoginSinup = () => {
           googleAccessToken: codeResponse.access_token,
         });
       }
-      console.log(res);
+      console.log('Response from server ', res);
     },
     onError: (error) => {
       console.log('Login Failed:', error);
