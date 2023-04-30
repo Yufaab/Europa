@@ -7,7 +7,7 @@ export default function NavBar() {
   const [profile, setProfile] = useState(false);
 
   return (
-    <nav className="w-full bg-gradient-to-b from-black fixed top-0">
+    <nav className="w-full fixed top-0">
       <div className="px-4 mx-auto lg:max-w-8xl md:items-center md:flex md:px-8">
         <div className="flex items-center justify-between md:py-5 md:block">
           <div className="w-[200px] relative">
@@ -64,16 +64,16 @@ export default function NavBar() {
           }`}
         >
           <ul className="items-center justify-center text-[18px] space-y-8 md:flex md:space-x-6 md:space-y-0">
-            <li className="text-white hover:text-[#0098FF]">
+            <li className="hover:text-[#0098FF] text-sky-500 hover:underline">
               <Link to="/">Home</Link>
             </li>
-            <li className="text-white hover:text-[#0098FF]">
+            <li className="hover:text-[#0098FF] text-sky-500 hover:underline">
               <a href="#">About</a>
             </li>
-            <li className="text-white hover:text-[#0098FF]">
+            <li className="hover:text-[#0098FF] text-sky-500 hover:underline">
               <a href="#">Colleges</a>
             </li>
-            <li className="text-white hover:text-[#0098FF]">
+            <li className="hover:text-[#0098FF] text-sky-500 hover:underline">
               <a href="#">Rank</a>
             </li>
           </ul>
