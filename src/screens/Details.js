@@ -79,7 +79,9 @@ function Details() {
         <div className="basis-[70%]">{SwitchPage()}</div>
         <div className="basis-[10%] flex justify-between">
           <button
-            className="h-[30px] w-[70px] text-center items-center hover:bg-sky-700 bg-[#0098FF] rounded-[3px] p-[3px] justify-items-center text-[#fff] font-medium"
+            className={`h-[30px] w-[70px] text-center items-center hover:bg-blue-600 bg-[#0098FF] rounded-[3px] p-[3px] justify-items-center text-[#fff] font-medium ${
+              page === 0 ? 'cursor-not-allowed' : 'cursor-pointer'
+            }`}
             disabled={page === 0}
             type="button"
             onClick={() => {
@@ -89,7 +91,7 @@ function Details() {
             Prev
           </button>
           <button
-            className="h-[30px] w-[70px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[3px] p-[3px] justify-items-center  text-[#fff] font-medium"
+            className="h-[30px] w-[70px] text-center items-center bg-[#0098FF] hover:bg-blue-600 rounded-[3px] p-[3px] justify-items-center  text-[#fff] font-medium"
             type="button"
             onClick={() => {
               if (page === FormTitles.length - 1) {

@@ -5,7 +5,7 @@ import RegisterCouncelling from './components/RegisterCouncelling';
 import LoginSignup from './screens/LoginSignup';
 import { YufaabInstanceProvider } from './context/YufaabContext';
 import YufaabInstance from './lib/api';
-import { Card, NavBar } from './components';
+import { NavBar } from './components';
 import { Home } from './screens';
 import Details from './screens/Details';
 
@@ -25,7 +25,6 @@ const App = () => {
                 path="/registercouncelling"
                 element={<RegisterCouncelling />}
               />
-              <Route path="/card" element={<Card />} />
               <Route path="/" element={<Home />} />
             </Routes>
           </div>
