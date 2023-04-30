@@ -5,6 +5,20 @@ import YufaabContext from '../context/YufaabContext';
 const LoginSinup = () => {
   const { yufaabInstance } = useContext(YufaabContext);
   const [isMember, setIsMember] = useState(false);
+  const [userInput, setUserInput] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    password: '',
+    phone: '',
+  });
+
+  const changeInputValue = (e) => {
+    userInput[e.target.name] = e.target.value;
+    setUserInput((prevState) => {
+      return { ...prevState, [e.target.name]: e.target.value };
+    });
+  };
 
   const toggle = () => {
     setIsMember(!isMember);
@@ -29,7 +43,19 @@ const LoginSinup = () => {
     },
   });
 
-  const submitHandler = () => {};
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    let res;
+    if (isMember) {
+      res = await yufaabInstance.loginHandler({
+        email: userInput.email,
+        password: userInput.password,
+      });
+    } else {
+      res = await yufaabInstance.signUpHandler({ ...userInput });
+    }
+    console.log(res);
+  };
 
   return (
     <div className="flex flex-col mx-auto mt-[128px] h-[600px] w-[600px]">
@@ -47,16 +73,20 @@ const LoginSinup = () => {
           <input
             className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-none text-[#33475b]"
             type="text"
-            name="name"
+            name="firstname"
             placeholder="First Name"
+            value={userInput.firstname}
+            onChange={changeInputValue}
           />
         )}
         {!isMember && (
           <input
             className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-none text-[#33475b]"
             type="text"
-            name="name"
+            name="lastname"
             placeholder="Last Name"
+            value={userInput.lastname}
+            onChange={changeInputValue}
           />
         )}
         <input
@@ -64,13 +94,17 @@ const LoginSinup = () => {
           type="email"
           name="email"
           placeholder="Email"
+          value={userInput.email}
+          onChange={changeInputValue}
         />
         {!isMember && (
           <input
             className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-none text-[#33475b]"
             type="text"
-            name="name"
+            name="phone"
             placeholder="Phone Number"
+            value={userInput.phone}
+            onChange={changeInputValue}
           />
         )}
         <input
@@ -78,6 +112,8 @@ const LoginSinup = () => {
           type="password"
           name="password"
           placeholder="Password"
+          value={userInput.password}
+          onChange={changeInputValue}
         />
         <button
           type="submit"
