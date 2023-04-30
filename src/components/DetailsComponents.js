@@ -150,7 +150,11 @@ export const State = ({ formData, setFormData }) => {
         }}
       >
         {IndStates.IndianStates.map((item) => (
-          <option key={item} value={formData.item} className="w-[300px] max-w-[300px] text-ellipsis text-[14px] overflow-hidden">
+          <option
+            key={item}
+            value={formData.item}
+            className="w-[300px] max-w-[300px] text-ellipsis text-[14px] overflow-hidden"
+          >
             {item}
           </option>
         ))}
@@ -168,7 +172,11 @@ export const Branches = ({ formData, setFormData }) => {
         }}
       >
         {BranchData.branches2022.map((item) => (
-          <option key={item} value={formData.item} className="w-[300px] max-w-[300px] text-ellipsis text-[14px] overflow-hidden">
+          <option
+            key={item}
+            value={formData.item}
+            className="w-[300px] max-w-[300px] text-ellipsis text-[14px] overflow-hidden"
+          >
             {item}
           </option>
         ))}

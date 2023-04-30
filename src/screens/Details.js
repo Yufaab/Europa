@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { Category, CategoryRank, Gender, Rank, IsPWD, State, Branches } from '../components/DetailsComponents';
+import {
+  Category,
+  CategoryRank,
+  Gender,
+  Rank,
+  IsPWD,
+  State,
+  Branches,
+} from '../components/DetailsComponents';
 
 function Details() {
   const [page, setPage] = useState(0);
@@ -10,20 +18,35 @@ function Details() {
     gender: '',
     ispwd: '',
     state: '',
-    branch: ''
+    branch: '',
   });
 
-  const FormTitles = ['Enter your rank', 'Choose your category', 'Select your gender', 'Category Rank if applicable', 'Are you physically disabled?', 'Select your State', 'Select your preferred Branch'];
+  const FormTitles = [
+    'Enter your rank',
+    'Choose your category',
+    'Select your gender',
+    'Category Rank if applicable',
+    'Are you physically disabled?',
+    'Select your State',
+    'Select your preferred Branch',
+  ];
 
   const SwitchPage = () => {
     switch (page) {
-      case 0: return <Rank formData={formData} setFormData={setFormData} />;
-      case 1: return <Category formData={formData} setFormData={setFormData} />;
-      case 2: return <Gender formData={formData} setFormData={setFormData} />;
-      case 3: return <CategoryRank formData={formData} setFormData={setFormData} />;
-      case 4: return <IsPWD formData={formData} setFormData={setFormData} />;
-      case 5: return <State formData={formData} setFormData={setFormData} />;
-      default: return <Branches formData={formData} setFormData={setFormData} />;
+      case 0:
+        return <Rank formData={formData} setFormData={setFormData} />;
+      case 1:
+        return <Category formData={formData} setFormData={setFormData} />;
+      case 2:
+        return <Gender formData={formData} setFormData={setFormData} />;
+      case 3:
+        return <CategoryRank formData={formData} setFormData={setFormData} />;
+      case 4:
+        return <IsPWD formData={formData} setFormData={setFormData} />;
+      case 5:
+        return <State formData={formData} setFormData={setFormData} />;
+      default:
+        return <Branches formData={formData} setFormData={setFormData} />;
     }
   };
   return (
@@ -35,7 +58,20 @@ function Details() {
         <div
           className="h-[80%] bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% rounded-[5px] mt-[30px]"
           style={{
-            width: page === 0 ? '14.28%' : page === 1 ? '28.56%' : page === 2 ? '42.84%' : page === 3 ? '57.12%' : page === 4 ? '71.40%' : page === 5 ? '85.68%' : '100%',
+            width:
+              page === 0
+                ? '14.28%'
+                : page === 1
+                ? '28.56%'
+                : page === 2
+                ? '42.84%'
+                : page === 3
+                ? '57.12%'
+                : page === 4
+                ? '71.40%'
+                : page === 5
+                ? '85.68%'
+                : '100%',
           }}
         />
       </div>
