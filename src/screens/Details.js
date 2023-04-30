@@ -49,6 +49,16 @@ function Details() {
         return <Branches formData={formData} setFormData={setFormData} />;
     }
   };
+
+  const pageWidth = {
+    0: '14.28%',
+    1: '28.56%',
+    2: '42.84%',
+    3: '57.12%',
+    4: '71.40%',
+    5: '85.68%',
+  };
+
   return (
     <div className="flex flex-col mx-auto mt-[168px] h-[400px] w-[500px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px]">
       <h3 className="mx-auto text-[48px] text-[#0098FF] font-semibold mt-[15px]">
@@ -58,20 +68,7 @@ function Details() {
         <div
           className="h-[80%] bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% rounded-[5px] mt-[30px]"
           style={{
-            width:
-              page === 0
-                ? '14.28%'
-                : page === 1
-                ? '28.56%'
-                : page === 2
-                ? '42.84%'
-                : page === 3
-                ? '57.12%'
-                : page === 4
-                ? '71.40%'
-                : page === 5
-                ? '85.68%'
-                : '100%',
+            width: pageWidth[page] || '100%',
           }}
         />
       </div>
