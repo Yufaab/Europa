@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useGoogleLogin } from '@react-oauth/google';
 import YufaabContext from '../context/YufaabContext';
+import { GoogleLogo } from '../assets';
 
 const LoginSinup = () => {
   const { yufaabInstance } = useContext(YufaabContext);
@@ -71,7 +72,7 @@ const LoginSinup = () => {
       >
         {!isMember && (
           <input
-            className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-none text-[#33475b]"
+            className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
             type="text"
             name="firstname"
             placeholder="First Name"
@@ -81,7 +82,7 @@ const LoginSinup = () => {
         )}
         {!isMember && (
           <input
-            className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-none text-[#33475b]"
+            className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
             type="text"
             name="lastname"
             placeholder="Last Name"
@@ -90,7 +91,7 @@ const LoginSinup = () => {
           />
         )}
         <input
-          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-none text-[#33475b]"
+          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
           type="email"
           name="email"
           placeholder="Email"
@@ -99,7 +100,7 @@ const LoginSinup = () => {
         />
         {!isMember && (
           <input
-            className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-none text-[#33475b]"
+            className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
             type="text"
             name="phone"
             placeholder="Phone Number"
@@ -108,7 +109,7 @@ const LoginSinup = () => {
           />
         )}
         <input
-          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-none text-[#33475b]"
+          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
           type="password"
           name="password"
           placeholder="Password"
@@ -117,16 +118,26 @@ const LoginSinup = () => {
         />
         <button
           type="submit"
-          className="h-[40px] w-[400px] text-center mt-[15px] text-[20px] bg-[#0098FF] rounded-[3px] p-[5px] justify-items-center text-[#fff] font-medium"
+          className="h-[40px] w-[400px] text-center mt-[15px] text-[20px] bg-[#0098FF] rounded-[100px] p-[5px] justify-items-center text-[#fff] font-medium"
         >
           {isMember ? 'Login' : 'Register'}
         </button>
-        <button type="submit" className="" onClick={login}>
+        <p className="opacity-[.6] my-[10px]">OR</p>
+        <button
+          type="submit"
+          className="flex flex-row h-[40px] w-auto text-center border-[2px] hover:border-[4px] p-4 rounded-[100px] items-center text-[#505050] border-[#eaeaea] font-semibold"
+          onClick={login}
+        >
+          <img
+            src={GoogleLogo}
+            alt="Google logo"
+            className="object-contain h-[18px] flex mr-[5px] mt-[1.2px]"
+          />
           {isMember ? 'Log in with Google' : 'Sign up with Google'}
         </button>
       </form>
       <p className="flex ml-auto mr-auto items-center text-[14px] text-[#4a4a4a] mt-[20px]">
-        {isMember ? 'Dont have an account?' : 'Already a member?'}
+        {isMember ? 'Not a member?' : 'Already a member?'}
         <button
           type="button"
           className="ml-[5px] text-[14px] underline text-[#0098FF]"
