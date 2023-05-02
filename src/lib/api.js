@@ -65,7 +65,7 @@ class YufaabInstance {
     }
   }
 
-  async createOrder(data, status) {
+  async createOrder(data) {
     try {
       const options = {
         method: 'POST',
@@ -75,7 +75,6 @@ class YufaabInstance {
         },
         data: {
           data,
-          status,
           isNewMember: true
         }
       };
@@ -86,11 +85,11 @@ class YufaabInstance {
     }
   }
 
-  async updateOrder(data) {
+  async updateOrder(data, orderid) {
     try {
       const options = {
         method: 'POST',
-        url: `${this.host}/order`,
+        url: `${this.host}/order/${orderid}`,
         headers: {
           Authorization: `JWT ${this.getToken()}`
         },
