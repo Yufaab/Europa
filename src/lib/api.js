@@ -89,12 +89,13 @@ class YufaabInstance {
     try {
       const options = {
         method: 'POST',
-        url: `${this.host}/order/${orderid}`,
+        url: `${this.host}/order`,
         headers: {
           Authorization: `JWT ${this.getToken()}`
         },
         data: {
           ...data,
+          orderid,
           isNewMember: false
         }
       };
