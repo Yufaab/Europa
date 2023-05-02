@@ -8,9 +8,18 @@ import YufaabInstance from './lib/api';
 import { NavBar } from './components';
 import { Home } from './screens';
 import Details from './screens/Details';
+import userStore from './store/userStore';
+import Review from './screens/Review';
+import Orders from './screens/Orders';
 
 const App = () => {
   const yufaabInstance = new YufaabInstance(process.env.REACT_APP_BACKEND_URL);
+  const token = yufaabInstance.getToken();
+  const setToken = userStore((state) => state.setToken);
+
+  if (token) {
+    setToken(token);
+  }
 
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
@@ -26,6 +35,8 @@ const App = () => {
                 element={<RegisterCouncelling />}
               />
               <Route path="/" element={<Home />} />
+              <Route path="/review" element={<Review />} />
+              <Route path="/order" element={<Orders />} />
             </Routes>
           </div>
         </Router>

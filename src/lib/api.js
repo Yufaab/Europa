@@ -5,6 +5,18 @@ class YufaabInstance {
     this.host = host;
   }
 
+  setToken(token) {
+    localStorage.setItem('token', token);
+  }
+
+  getToken() {
+    return localStorage.getItem('token');
+  }
+
+  removeToken() {
+    localStorage.removeItem('token');
+  }
+
   async signUpHandler(data) {
     try {
       const options = {
@@ -15,6 +27,9 @@ class YufaabInstance {
         },
       };
       const res = await axios(options);
+      if (res.status === 201) {
+        this.setToken(res.data.data.token);
+      }
       return res;
     } catch (e) {
       return e;
@@ -31,22 +46,13 @@ class YufaabInstance {
         },
       };
       const res = await axios(options);
+      if (res.status === 201) {
+        this.setToken(res.data.data.token);
+      }
       return res;
     } catch (e) {
       return e;
     }
-  }
-
-  setToken(token) {
-    localStorage.setItem('token', token);
-  }
-
-  getToken() {
-    return localStorage.getItem('token');
-  }
-
-  removeToken() {
-    localStorage.removeItem('token');
   }
 
   async getOrder(orderid) {
@@ -55,7 +61,7 @@ class YufaabInstance {
         method: 'GET',
         url: `${this.host}/order/${orderid}`,
         headers: {
-          Authorization: `JWT ${this.getToken()}`
+          Authorization: `JWT ${this.getToken()}`,
         },
       };
       const response = await axios(options);
@@ -71,12 +77,12 @@ class YufaabInstance {
         method: 'POST',
         url: `${this.host}/order`,
         headers: {
-          Authorization: `JWT ${this.getToken()}`
+          Authorization: `JWT ${this.getToken()}`,
         },
         data: {
           data,
-          isNewMember: true
-        }
+          isNewMember: true,
+        },
       };
       const response = await axios(options);
       return response;
@@ -91,13 +97,77 @@ class YufaabInstance {
         method: 'POST',
         url: `${this.host}/order`,
         headers: {
-          Authorization: `JWT ${this.getToken()}`
+          Authorization: `JWT ${this.getToken()}`,
         },
         data: {
           ...data,
           orderid,
-          isNewMember: false
-        }
+          isNewMember: false,
+        },
+      };
+      const response = await axios(options);
+      return response;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  async deleteOrder(data, orderid) {
+    try {
+      const options = {
+        method: 'DELETE',
+        url: `${this.host}/student/order/${orderid}`,
+        headers: {
+          Authorization: `JWT ${this.getToken()}`,
+        },
+        data: {
+          ...data,
+        },
+      };
+      const response = await axios(options);
+      return response;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  async getAllOrders() {
+    try {
+      const options = {
+        method: 'GET',
+        url: `${this.host}/student/order`,
+        headers: {
+          Authorization: `JWT ${this.getToken()}`,
+        },
+      };
+      const response = await axios(options);
+      return response;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  async uploadReview(data) {
+    try {
+      const options = {
+        method: 'POST',
+        url: `${this.host}/api/review/upload`,
+        data: {
+          ...data,
+        },
+      };
+      const response = await axios(options);
+      return response;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  async fetchReviews() {
+    try {
+      const options = {
+        method: 'GET',
+        url: `${this.host}/api/review/fetch`,
       };
       const response = await axios(options);
       return response;

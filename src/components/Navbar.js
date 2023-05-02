@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from '../assets';
+import userStore from '../store/userStore';
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
   const [profile, setProfile] = useState(false);
+  const userToken = userStore((state) => state.userToken);
 
   return (
     <nav className="w-full bg-gradient-to-b from-black fixed top-0">
@@ -73,9 +75,11 @@ export default function NavBar() {
             <li className="text-white hover:text-[#0098FF]">
               <a href="#">Colleges</a>
             </li>
-            <li className="text-white hover:text-[#0098FF]">
-              <a href="#">Rank</a>
-            </li>
+            {userToken && (
+              <li className="text-white hover:text-[#0098FF]">
+                <Link to="/order">Orders</Link>
+              </li>
+            )}
           </ul>
         </div>
         <div className=" w-[200px] hidden md:flex md:justify-end">
@@ -87,7 +91,7 @@ export default function NavBar() {
               }}
               className="px-4 py-2 text-white bg-[#0098FF] rounded-md hover:bg-blue-600"
             >
-              Sign In
+              {!userToken ? 'Sign In' : 'Log Out'}
             </button>
           </Link>
         </div>

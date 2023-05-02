@@ -2,10 +2,12 @@ import React, { useState, useContext } from 'react';
 import { useGoogleLogin } from '@react-oauth/google';
 import YufaabContext from '../context/YufaabContext';
 import { GoogleLogo } from '../assets';
+import userStore from '../store/userStore';
 
 const LoginSinup = () => {
   const { yufaabInstance } = useContext(YufaabContext);
   const [isMember, setIsMember] = useState(false);
+  const setToken = userStore((state) => state.setToken);
   const [userInput, setUserInput] = useState({
     firstname: '',
     lastname: '',
@@ -52,6 +54,9 @@ const LoginSinup = () => {
         email: userInput.email,
         password: userInput.password,
       });
+      if (res.status === 201) {
+        setToken(res.data.data.token);
+      }
     } else {
       res = await yufaabInstance.signUpHandler({ ...userInput });
     }

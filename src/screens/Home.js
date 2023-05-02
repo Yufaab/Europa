@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import {
-  CalenderIcon,
-  FindLocationIcon,
-  RefreshIcon,
-  ReviewIcon,
-  RightIcon,
-  UserIcon,
-} from '../assets';
+import { RefreshIcon, ReviewIcon, RightIcon, UserIcon } from '../assets';
 import { HomeLinks } from '../components';
+import userStore from '../store/userStore';
+import YufaabContext from '../context/YufaabContext';
 
 export default function NavBar() {
+  const userToken = userStore((state) => state.userToken);
+  const { yufaabInstance } = useContext(YufaabContext);
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      const res = await yufaabInstance.fetchReviews();
+      console.log(res);
+    };
+    fetchReviews();
+  }, []);
+
   return (
     <div className="h-screen">
       <div className="home-top h-3/5 w-full flex items-center">
@@ -29,21 +35,7 @@ export default function NavBar() {
         </div>
       </div>
       <div className="home-links h-max px-10 bg-[#D9D9D9] w-[100%] flex flex-wrap justify-center items-center">
-        <HomeLinks
-          label="Find colleges"
-          icon={FindLocationIcon}
-          linkTo="/college"
-        />
-        <HomeLinks
-          label="Free Conselling"
-          icon={UserIcon}
-          linkTo="/conselling"
-        />
-        <HomeLinks
-          label="Important Dates"
-          icon={CalenderIcon}
-          linkTo="/dates"
-        />
+        <HomeLinks label="Conselling" icon={UserIcon} linkTo="/conselling" />
         <HomeLinks
           label="Latest Updates"
           icon={RefreshIcon}
@@ -68,7 +60,7 @@ export default function NavBar() {
           <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
             Description 2
           </p>
-          <Link to="/details">
+          <Link to={`${userToken ? '/details' : '/login'}`}>
             <button
               type="button"
               className="flex flex-col z-2 bg-[#fff] text-[#000] w-[150px] h-[40px] rounded-[40px] items-center mx-auto mt-[40px] pt-[8px] shadow-[0_5px_10px_rgba(0, 0, 0, .1)] hover:bg-gradient-to-r from-amber-200 to-yellow-400"
@@ -90,7 +82,7 @@ export default function NavBar() {
           <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
             Description 2
           </p>
-          <Link to="/details">
+          <Link to={`${userToken ? '/details' : '/login'}`}>
             <button
               type="button"
               className="flex flex-col z-2 bg-[#fff] text-[#000] w-[150px] h-[40px] rounded-[40px] items-center mx-auto mt-[40px] pt-[8px] shadow-[0_5px_10px_rgba(0, 0, 0, .1)] hover:bg-gradient-to-r from-amber-200 to-yellow-400"
@@ -112,7 +104,7 @@ export default function NavBar() {
           <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
             Description 2
           </p>
-          <Link to="/details">
+          <Link to={`${userToken ? '/details' : '/login'}`}>
             <button
               type="button"
               className="flex flex-col z-2 bg-[#fff] text-[#000] w-[150px] h-[40px] rounded-[40px] items-center mx-auto mt-[40px] pt-[8px] shadow-[0_5px_10px_rgba(0, 0, 0, .1)] hover:bg-gradient-to-r from-amber-200 to-yellow-400"
