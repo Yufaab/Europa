@@ -36,6 +36,75 @@ class YufaabInstance {
       return e;
     }
   }
+
+  setToken(token) {
+    localStorage.setItem('token', token);
+  }
+
+  getToken() {
+    return localStorage.getItem('token');
+  }
+
+  removeToken() {
+    localStorage.removeItem('token');
+  }
+
+  async getOrder(orderid) {
+    try {
+      const options = {
+        method: 'GET',
+        url: `${this.host}/order/${orderid}`,
+        headers: {
+          Authorization: `JWT ${this.getToken()}`
+        },
+      };
+      const response = await axios(options);
+      return response;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  async createOrder(data) {
+    try {
+      const options = {
+        method: 'POST',
+        url: `${this.host}/order`,
+        headers: {
+          Authorization: `JWT ${this.getToken()}`
+        },
+        data: {
+          data,
+          isNewMember: true
+        }
+      };
+      const response = await axios(options);
+      return response;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  async updateOrder(data, orderid) {
+    try {
+      const options = {
+        method: 'POST',
+        url: `${this.host}/order`,
+        headers: {
+          Authorization: `JWT ${this.getToken()}`
+        },
+        data: {
+          ...data,
+          orderid,
+          isNewMember: false
+        }
+      };
+      const response = await axios(options);
+      return response;
+    } catch (error) {
+      return error;
+    }
+  }
 }
 
 export default YufaabInstance;
