@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Category,
   CategoryRank,
@@ -60,7 +61,7 @@ function Details() {
   };
 
   return (
-    <div className="flex flex-col mx-auto mt-[200px] h-[400px] w-[500px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px]">
+    <div className="flex flex-col mx-auto mt-[200px] h-auto w-[500px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px]">
       <h3 className="mx-auto text-[48px] text-[#0098FF] font-semibold mt-[15px]">
         Yufaab
       </h3>
@@ -90,19 +91,37 @@ function Details() {
           >
             Prev
           </button>
-          <button
-            className="h-[30px] w-[70px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[3px] justify-items-center  text-[#fff] font-medium"
-            type="button"
-            onClick={() => {
-              if (page === FormTitles.length - 1) {
-                console.log(formData);
-              } else {
-                setPage((currPage) => currPage + 1);
-              }
-            }}
-          >
-            {page === FormTitles.length - 1 ? 'Submit' : 'Next'}
-          </button>
+          <div>
+            {page === FormTitles.length - 1 ? (
+              <button
+                className="h-[30px] w-[70px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[3px] justify-items-center  text-[#fff] font-medium"
+                type="button"
+                onClick={() => {
+                  if (page === FormTitles.length - 1) {
+                    console.log(formData);
+                  } else {
+                    setPage((currPage) => currPage + 1);
+                  }
+                }}
+              >
+                <Link to="/preview">Submit</Link>
+              </button>
+            ) : (
+              <button
+                className="h-[30px] w-[70px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[3px] justify-items-center  text-[#fff] font-medium"
+                type="button"
+                onClick={() => {
+                  if (page === FormTitles.length - 1) {
+                    console.log(formData);
+                  } else {
+                    setPage((currPage) => currPage + 1);
+                  }
+                }}
+              >
+                Next
+              </button>
+            )}
+          </div>
         </div>
         <h4 className="flex text-[14px] mb-[20px] mx-auto text-slate-900">
           Step

@@ -7,3 +7,4 @@ export { default as ReviewIcon } from './ReviewIcon.svg';
 export { default as UserIcon } from './UserIcon.svg';
 export { default as Logo } from './Logo.svg';
 export { default as GoogleLogo } from './GoogleLogo.png';
+export { default as NotFound } from './notFound.jpg';

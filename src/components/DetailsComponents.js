@@ -23,22 +23,22 @@ export const Category = ({ formData, setFormData }) => {
         className="mb-[12px]"
         type="radio"
         name="selectCategory"
-        value="General"
+        value="OPEN"
         onChange={(e) => {
           setFormData({ ...formData, category: e.target.value });
         }}
       />
-      General
+      OPEN
       <br />
       <input
         type="radio"
         name="selectCategory"
-        value="OBC"
+        value="OBC-NCL"
         onChange={(e) => {
           setFormData({ ...formData, category: e.target.value });
         }}
       />
-      OBC
+      OBC-NCL
       <br />
       <input
         className="mb-[12px]"
@@ -70,6 +70,56 @@ export const Category = ({ formData, setFormData }) => {
         }}
       />
       EWS
+      <br />
+      <input
+        type="radio"
+        name="selectCategory"
+        value="OPEN (PwD)"
+        onChange={(e) => {
+          setFormData({ ...formData, category: e.target.value });
+        }}
+      />
+      OPEN (PwD)
+      <br />
+      <input
+        type="radio"
+        name="selectCategory"
+        value="OBC-NCL (PwD)"
+        onChange={(e) => {
+          setFormData({ ...formData, category: e.target.value });
+        }}
+      />
+      OBC-NCL (PwD)
+      <br />
+      <input
+        type="radio"
+        name="selectCategory"
+        value="SC (PwD)"
+        onChange={(e) => {
+          setFormData({ ...formData, category: e.target.value });
+        }}
+      />
+      SC (PwD)
+      <br />
+      <input
+        type="radio"
+        name="selectCategory"
+        value="EWS (PwD)"
+        onChange={(e) => {
+          setFormData({ ...formData, category: e.target.value });
+        }}
+      />
+      EWS (PwD)
+      <br />
+      <input
+        type="radio"
+        name="selectCategory"
+        value="ST (PwD)"
+        onChange={(e) => {
+          setFormData({ ...formData, category: e.target.value });
+        }}
+      />
+      ST (PwD)
     </div>
   );
 };
@@ -85,7 +135,7 @@ export const Gender = ({ formData, setFormData }) => {
           setFormData({ ...formData, gender: e.target.value });
         }}
       />
-      Male
+      Gender-Neutral
       <br />
       <input
         type="radio"
@@ -95,7 +145,7 @@ export const Gender = ({ formData, setFormData }) => {
           setFormData({ ...formData, gender: e.target.value });
         }}
       />
-      Female
+      Female-only (including Supernumerary)
     </div>
   );
 };
