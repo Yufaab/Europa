@@ -5,7 +5,7 @@ export const Rank = ({ formData, setFormData }) => {
   return (
     <div className="flex flex-col mt-[20px]">
       <input
-        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-slate-700"
+        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2  text-slate-700"
         type="text"
         placeholder="Rank"
         value={formData.rank}
@@ -103,7 +103,7 @@ export const CategoryRank = ({ formData, setFormData }) => {
   return (
     <div className="flex flex-col mt-[20px]">
       <input
-        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-slate-700"
+        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2  text-slate-700"
         type="text"
         placeholder="Category Rank"
         value={formData.categoryRank}

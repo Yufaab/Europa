@@ -64,7 +64,7 @@ const LoginSinup = () => {
   };
 
   return (
-    <div className="flex flex-col mx-auto mt-[128px] h-[600px] w-[600px]">
+    <div className="flex flex-col mx-auto mt-[108px] h-auto w-[600px] pb-[25px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px]">
       <h3 className="mx-auto text-[48px] text-[#0098FF] font-semibold mt-[20px]">
         Yufaab
       </h3>
@@ -77,7 +77,7 @@ const LoginSinup = () => {
       >
         {!isMember && (
           <input
-            className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
+            className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
             type="text"
             name="firstname"
             placeholder="First Name"
@@ -87,7 +87,7 @@ const LoginSinup = () => {
         )}
         {!isMember && (
           <input
-            className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
+            className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
             type="text"
             name="lastname"
             placeholder="Last Name"
@@ -96,7 +96,7 @@ const LoginSinup = () => {
           />
         )}
         <input
-          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
+          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
           type="email"
           name="email"
           placeholder="Email"
@@ -105,7 +105,7 @@ const LoginSinup = () => {
         />
         {!isMember && (
           <input
-            className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
+            className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
             type="text"
             name="phone"
             placeholder="Phone Number"
@@ -114,7 +114,7 @@ const LoginSinup = () => {
           />
         )}
         <input
-          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline-[#0098FF] text-[#33475b]"
+          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
           type="password"
           name="password"
           placeholder="Password"
