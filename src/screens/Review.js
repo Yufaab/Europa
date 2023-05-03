@@ -29,14 +29,14 @@ const Review = () => {
   };
 
   return (
-    <div className="flex flex-col mx-auto mt-[108px] pb-[25px] h-auto w-[600px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px]">
+    <div className="flex flex-col mx-auto mt-[108px] pb-[25px] h-auto w-[900px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px]">
       <h3 className="mx-auto text-[48px] text-[#0098FF] font-semibold mt-[20px]">
         Yufaab
       </h3>
       <h4 className="flex flex-col mx-auto mt-[20px] font-semibold text-[#33475b] text-[22px]">Write what you feel</h4>
       <div className="flex flex-col mx-auto mt-[20px]">
         <input
-          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
+          className="mx-auto h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
           type="text"
           name="firstname"
           placeholder="First Name"
@@ -44,7 +44,7 @@ const Review = () => {
           onChange={changeInputValue}
         />
         <input
-          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
+          className="mx-auto h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
           type="text"
           name="lastname"
           placeholder="Last Name"
@@ -52,7 +52,7 @@ const Review = () => {
           onChange={changeInputValue}
         />
         <input
-          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
+          className="mx-auto h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
           type="email"
           name="email"
           placeholder="Email"
@@ -60,7 +60,7 @@ const Review = () => {
           onChange={changeInputValue}
         />
         <input
-          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
+          className="mx-auto h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
           type="text"
           name="college"
           placeholder="College"
@@ -68,7 +68,7 @@ const Review = () => {
           onChange={changeInputValue}
         />
         <input
-          className="h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
+          className="mx-auto h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] border-t-[1px] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"
           type="text"
           name="profile"
           placeholder="Link to a social profile"
@@ -79,12 +79,12 @@ const Review = () => {
           theme="snow"
           value={review}
           onChange={setRieview}
-          className="w-[400px] h-[8.5rem] text-[#4a4a4a] resize-none"
+          className="w-[800px] h-[8.5rem] text-[#4a4a4a] resize-none"
         />
         <button
           type="submit"
           onClick={submitHandler}
-          className="cursor-pointer h-[40px] w-[400px] text-center mt-[65px] hover:bg-sky-700 text-[20px] bg-[#0098FF] rounded-[100px] p-[5px] justify-items-center text-[#fff] font-medium"
+          className="mx-auto cursor-pointer h-[40px] w-[400px] text-center mt-[65px] hover:bg-sky-700 text-[20px] bg-[#0098FF] rounded-[100px] p-[5px] justify-items-center text-[#fff] font-medium"
         >
           Submit
         </button>
