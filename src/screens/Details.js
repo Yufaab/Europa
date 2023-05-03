@@ -60,7 +60,7 @@ function Details() {
   };
 
   return (
-    <div className="flex flex-col mx-auto mt-[168px] h-[400px] w-[500px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px]">
+    <div className="flex flex-col mx-auto mt-[200px] h-[400px] w-[500px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px]">
       <h3 className="mx-auto text-[48px] text-[#0098FF] font-semibold mt-[15px]">
         Yufaab
       </h3>
@@ -79,7 +79,7 @@ function Details() {
         <div className="basis-[70%]">{SwitchPage()}</div>
         <div className="basis-[10%] flex justify-between">
           <button
-            className={`h-[30px] w-[70px] text-center items-center hover:bg-blue-600 bg-[#0098FF] rounded-[3px] p-[3px] justify-items-center text-[#fff] font-medium ${
+            className={`h-[30px] w-[70px] text-center items-center hover:bg-sky-700 bg-[#0098FF] rounded-[100px] p-[3px] justify-items-center text-[#fff] font-medium ${
               page === 0 ? 'cursor-not-allowed' : 'cursor-pointer'
             }`}
             disabled={page === 0}
@@ -91,7 +91,7 @@ function Details() {
             Prev
           </button>
           <button
-            className="h-[30px] w-[70px] text-center items-center bg-[#0098FF] hover:bg-blue-600 rounded-[3px] p-[3px] justify-items-center  text-[#fff] font-medium"
+            className="h-[30px] w-[70px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[3px] justify-items-center  text-[#fff] font-medium"
             type="button"
             onClick={() => {
               if (page === FormTitles.length - 1) {
