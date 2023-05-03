@@ -175,6 +175,26 @@ class YufaabInstance {
       return error;
     }
   }
+
+  async makePayment(amount) {
+    try {
+      const options = {
+        method: 'POST',
+        url: `${this.host}/student/payment`,
+        headers: {
+          Authorization: `JWT ${this.getToken()}`,
+        },
+        data: {
+          amount,
+        },
+      };
+      const res = await axios(options);
+      return res;
+    } catch (err) {
+      console.error(err);
+      return err;
+    }
+  }
 }
 
 export default YufaabInstance;
