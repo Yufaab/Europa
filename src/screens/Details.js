@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
   Category,
   CategoryRank,
@@ -8,6 +7,7 @@ import {
   IsPWD,
   State,
   Branches,
+  PreviewOrder
 } from '../components/DetailsComponents';
 
 function Details() {
@@ -30,6 +30,7 @@ function Details() {
     'Are you physically disabled?',
     'Select your State',
     'Select your preferred Branch',
+    'Preview Your Details Carefully'
   ];
 
   const SwitchPage = () => {
@@ -46,23 +47,25 @@ function Details() {
         return <IsPWD formData={formData} setFormData={setFormData} />;
       case 5:
         return <State formData={formData} setFormData={setFormData} />;
-      default:
+      case 6:
         return <Branches formData={formData} setFormData={setFormData} />;
+      default:
+        return <PreviewOrder formData={formData} />;
     }
   };
 
   const pageWidth = {
-    0: '14.28%',
-    1: '28.56%',
-    2: '42.84%',
-    3: '57.12%',
-    4: '71.40%',
-    5: '85.68%',
+    0: '12.50%',
+    1: '25.00%',
+    2: '37.50%',
+    3: '50.00%',
+    4: '62.50%',
+    5: '75.00%',
+    6: '87.50%',
   };
-
   return (
-    <div className="flex flex-col mx-auto mt-[200px] h-auto w-[500px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px]">
-      <h3 className="mx-auto text-[48px] text-[#0098FF] font-semibold mt-[15px]">
+    <div className="flex flex-col mx-auto mt-[200px] h-auto w-[600px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px]">
+      <h3 className="mx-auto text-[48px] text-[#0098FF] font-semibold mt-[5px]">
         Yufaab
       </h3>
       <div className="flex mb-[50px] h-[5px] w-[500px] mx-auto">
@@ -73,14 +76,14 @@ function Details() {
           }}
         />
       </div>
-      <div className="mx-auto h-[400px] w-[400px] flex flex-col shadow-[0_0_15px_1px_rgba(0, 0, 0, 0.4)] rounded-[8px]">
+      <div className="mx-auto h-[400px] w-[500px] flex flex-col shadow-[0_0_15px_1px_rgba(0, 0, 0, 0.4)] rounded-[8px]">
         <div className="basis-auto flex text-[#000] mt-auto text-[20px]">
           <h1>{FormTitles[page]}</h1>
         </div>
         <div className="basis-[70%]">{SwitchPage()}</div>
         <div className="basis-[10%] flex justify-between">
           <button
-            className={`h-[30px] w-[70px] text-center items-center hover:bg-sky-700 bg-[#0098FF] rounded-[100px] p-[3px] justify-items-center text-[#fff] font-medium ${
+            className={`h-[40px] w-[70px] text-center items-center hover:bg-sky-700 bg-[#0098FF] rounded-[100px] p-[3px] justify-items-center text-[#fff] font-medium ${
               page === 0 ? 'cursor-not-allowed' : 'cursor-pointer'
             }`}
             disabled={page === 0}
@@ -94,7 +97,7 @@ function Details() {
           <div>
             {page === FormTitles.length - 1 ? (
               <button
-                className="h-[30px] w-[70px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[3px] justify-items-center  text-[#fff] font-medium"
+                className="h-[40px] w-[200px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[5px] text-[#fff] font-medium pt-1"
                 type="button"
                 onClick={() => {
                   if (page === FormTitles.length - 1) {
@@ -104,11 +107,11 @@ function Details() {
                   }
                 }}
               >
-                <Link to="/preview">Submit</Link>
+                Proceed to Payment
               </button>
             ) : (
               <button
-                className="h-[30px] w-[70px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[3px] justify-items-center  text-[#fff] font-medium"
+                className="h-[40px] w-[70px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[3px] justify-items-center  text-[#fff] font-medium"
                 type="button"
                 onClick={() => {
                   if (page === FormTitles.length - 1) {
@@ -123,7 +126,7 @@ function Details() {
             )}
           </div>
         </div>
-        <h4 className="flex text-[14px] mb-[20px] mx-auto text-slate-900">
+        <h4 className="flex text-[14px] pb-[20px] mx-auto text-slate-900 mt-[-5px]">
           Step
           <hr className="mr-1" />
           {page + 1}

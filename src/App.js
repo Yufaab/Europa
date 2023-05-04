@@ -10,7 +10,7 @@ import { Home } from './screens';
 import Details from './screens/Details';
 import userStore from './store/userStore';
 import Review from './screens/Review';
-import PreviewOrder from './screens/PreviewOrder';
+import MyOrders from './screens/MyOrders';
 
 const App = () => {
   const yufaabInstance = new YufaabInstance(process.env.REACT_APP_BACKEND_URL);
@@ -36,7 +36,7 @@ const App = () => {
               />
               <Route path="/" element={<Home />} />
               <Route path="/review" element={<Review />} />
-              <Route path="/preview" element={<PreviewOrder />} />
+              <Route path="/myorders" element={<MyOrders />} />
             </Routes>
           </div>
         </Router>

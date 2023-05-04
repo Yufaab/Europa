@@ -5,7 +5,7 @@ export const Rank = ({ formData, setFormData }) => {
   return (
     <div className="flex flex-col mt-[20px]">
       <input
-        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2  text-slate-700"
+        className="flex flex-col h-[2.5rem] w-[500px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2  text-slate-700"
         type="text"
         placeholder="Rank"
         value={formData.rank}
@@ -153,7 +153,7 @@ export const CategoryRank = ({ formData, setFormData }) => {
   return (
     <div className="flex flex-col mt-[20px]">
       <input
-        className="flex flex-col h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2  text-slate-700"
+        className="flex flex-col h-[2.5rem] w-[500px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2  text-slate-700"
         type="text"
         placeholder="Category Rank"
         value={formData.categoryRank}
@@ -234,4 +234,17 @@ export const Branches = ({ formData, setFormData }) => {
     </div>
   );
 };
-export default { Rank, Category, CategoryRank, Gender, IsPWD, State, Branches };
+export const PreviewOrder = ({ formData }) => {
+  return (
+    <div className="flex flex-col mt-[20px] text-slate-600">
+      <h3 className={`${formData.rank ? 'pb-2 font-semibold text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`Rank: ${formData.rank ? formData.rank : 'No value selected'}`}</h3>
+      <h3 className={`${formData.category ? 'pb-2 font-semibold text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`Category: ${formData.category ? formData.category : 'No value selected'}`}</h3>
+      <h3 className={`${formData.gender ? 'pb-2 font-semibold  text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`Gender: ${formData.gender ? formData.gender : 'No value selected'}`}</h3>
+      <h3 className={`${formData.categoryRank ? 'pb-2 font-semibold text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`Category Rank: ${formData.categoryRank ? formData.categoryRank : 'No value selected'}`}</h3>
+      <h3 className={`${formData.ispwd ? 'pb-2 font-semibold text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`Is PWD?: ${formData.ispwd ? formData.ispwd : 'No value selected'}`}</h3>
+      <h3 className={`${formData.state ? 'pb-2 font-semibold text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`State: ${formData.state ? formData.state : 'No value selected'}`}</h3>
+      <h3 className={`${formData.branch ? 'pb-2 font-semibold text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`Branch Preferred: ${formData.branch ? formData.branch : 'No value selected'}`}</h3>
+    </div>
+  );
+};
+export default { Rank, Category, CategoryRank, Gender, IsPWD, State, Branches, PreviewOrder };
