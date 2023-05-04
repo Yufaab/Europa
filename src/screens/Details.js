@@ -8,6 +8,7 @@ import {
   State,
   Branches,
   PreviewOrder,
+  College,
 } from '../components/DetailsComponents';
 import userStore from '../store/userStore';
 import orderStore from '../store/orderStore';
@@ -34,7 +35,7 @@ function Details() {
 
   useEffect(() => {
     if (data) {
-      setPage(6);
+      setPage(7);
       setFormData(data);
     }
   }, [data]);
@@ -46,6 +47,7 @@ function Details() {
     'Category Rank if applicable',
     'Select your State',
     'Select your preferred Branch',
+    'Select your preferred College',
     'Preview Your Details Carefully',
   ];
 
@@ -63,6 +65,8 @@ function Details() {
         return <State formData={formData} setFormData={setFormData} />;
       case 5:
         return <Branches formData={formData} setFormData={setFormData} />;
+      case 6:
+        return <College formData={formData} setFormData={setFormData} />;
       default:
         return <PreviewOrder formData={formData} />;
     }

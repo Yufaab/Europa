@@ -1,5 +1,6 @@
-import BranchData from './branch.json';
-import IndStates from './states.json';
+import BranchData from '../lib/branch.json';
+import IndStates from '../lib/states.json';
+import InstituteData from '../lib/institute.json';
 
 export const Rank = ({ formData, setFormData }) => {
   return (
@@ -240,6 +241,32 @@ export const Branches = ({ formData, setFormData }) => {
     </div>
   );
 };
+
+export const College = ({ formData, setFormData }) => {
+  return (
+    <div className="flex flex-col mt-[20px] text-slate-700">
+      <select
+        className="w-auto overflow-hidden text-slate-700 p-[5px] rounded-md"
+        onChange={(e) => {
+          setFormData({
+            ...formData,
+            institute: [...formData.institute, e.target.value],
+          });
+        }}
+      >
+        {InstituteData.institute2022.map((item) => (
+          <option
+            key={item}
+            value={formData.item}
+            className="w-[300px] max-w-[300px] text-ellipsis text-[14px] overflow-hidden"
+          >
+            {item}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
 export const PreviewOrder = ({ formData }) => {
   return (
     <div className="flex flex-col mt-[20px] text-slate-600">
@@ -305,6 +332,17 @@ export const PreviewOrder = ({ formData }) => {
             : 'No value selected'
         }`}
       </h3>
+      <h3
+        className={`${
+          formData.institute
+            ? 'pb-2 font-semibold text-[#4BB543]'
+            : 'pb-2 text-[#ff0000]'
+        }`}
+      >
+        {`Branch Preferred: ${
+          formData.institute ? formData.institute : 'No value selected'
+        }`}
+      </h3>
     </div>
   );
 };
@@ -316,5 +354,6 @@ export default {
   IsPWD,
   State,
   Branches,
+  College,
   PreviewOrder,
 };
