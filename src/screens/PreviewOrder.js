@@ -1,27 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
-import PreviewsStructure from '../components/PreviewStructure';
-import YufaabContext from '../context/YufaabContext';
-
-const MyOrders = () => {
-  const [orders, setOrders] = useState([]);
-  const { yufaabInstance } = useContext(YufaabContext);
-
-  useEffect(() => {
-    const getAllOrders = async () => {
-      const res = await yufaabInstance.getAllOrders();
-      console.log(res);
-      setOrders(res.data.data.orders);
-    };
-    getAllOrders();
-  }, []);
+const PreviewOrder = ({ formData }) => {
   return (
-    <div>
-      <h2 className="mt-[100px] ml-[20px] lg:ml-[40px] text-[22px] text-[#0098FF]">Preview your details carefully</h2>
-      {orders.map((ongoingOrder) => (
-        <PreviewsStructure ongoingOrder={ongoingOrder} />
-      ))}
+    <div className="flex flex-col mt-[20px]">
+      <h3>{formData.rank}</h3>
+      <h3>{formData.category}</h3>
+      <h3>{formData.categoryRank}</h3>
+      <h3>{formData.gender}</h3>
+      <h3>{formData.ispwd}</h3>
+      <h3>{formData.state}</h3>
+      <h3>{formData.branch}</h3>
     </div>
   );
 };
 
-export default MyOrders;
+export default PreviewOrder;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PreviewsStructure = ({ ongoingOrder }) => {
+const MyOrderStructure = ({ ongoingOrder }) => {
   const date = new Date(ongoingOrder.createdAt);
   return (
     <div>
@@ -23,4 +23,4 @@ const PreviewsStructure = ({ ongoingOrder }) => {
   );
 };
 
-export default PreviewsStructure;
+export default MyOrderStructure;
