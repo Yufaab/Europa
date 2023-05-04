@@ -4,16 +4,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Krub:wght@300;400;500;600;700&display=swap');
 
 .ql-container.ql-snow {
-    border: none !important;
-    outline: solid 1px #0098FF;
-    border-radius: 7px;
-    font-size: 17px;
-    margin-bottom: 0;
+  border: none !important;
+  outline: solid 1px #0098ff;
+  border-radius: 7px;
+  font-size: 17px;
+  margin-bottom: 0;
 }
 .ql-toolbar.ql-snow {
-    border: none !important;
-    margin-top: -10px;
+  border: none !important;
+  margin-top: -10px;
 }
 .ql-container.ql-snow:hover {
-    outline: solid 2px #0098FF ;
+  outline: solid 2px #0098ff;
 }

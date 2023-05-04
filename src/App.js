@@ -21,6 +21,8 @@ const App = () => {
     setToken(token);
   }
 
+  console.log(token);
+
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
       <YufaabInstanceProvider value={{ yufaabInstance }}>
@@ -29,7 +31,7 @@ const App = () => {
             <NavBar />
             <Routes>
               <Route path="/details" element={<Details />} />
-              <Route path="/login" element={<LoginSignup />} />
+              {!token && <Route path="/login" element={<LoginSignup />} />}
               <Route
                 path="/registercouncelling"
                 element={<RegisterCouncelling />}

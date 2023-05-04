@@ -55,6 +55,25 @@ class YufaabInstance {
     }
   }
 
+  async logoutHandler() {
+    try {
+      const options = {
+        method: 'POST',
+        url: `${this.host}/student/logout`,
+        headers: {
+          Authorization: `JWT ${this.getToken()}`,
+        },
+      };
+      const res = await axios(options);
+      if (res.status === 200) {
+        this.removeToken();
+      }
+      return res;
+    } catch (e) {
+      return e;
+    }
+  }
+
   async getOrder(orderid) {
     try {
       const options = {

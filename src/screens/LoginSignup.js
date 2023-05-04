@@ -1,13 +1,18 @@
 import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
 import YufaabContext from '../context/YufaabContext';
 import { GoogleLogo } from '../assets';
 import userStore from '../store/userStore';
+import orderStore from '../store/orderStore';
 
 const LoginSinup = () => {
   const { yufaabInstance } = useContext(YufaabContext);
   const [isMember, setIsMember] = useState(false);
   const setToken = userStore((state) => state.setToken);
+  const data = orderStore((state) => state.data);
+  const navigate = useNavigate();
+
   const [userInput, setUserInput] = useState({
     firstname: '',
     lastname: '',
@@ -56,6 +61,11 @@ const LoginSinup = () => {
       });
       if (res.status === 201) {
         setToken(res.data.data.token);
+        if (data) {
+          navigate('/details');
+        } else {
+          navigate('/');
+        }
       }
     } else {
       res = await yufaabInstance.signUpHandler({ ...userInput });

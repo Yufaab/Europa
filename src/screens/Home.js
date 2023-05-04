@@ -3,17 +3,15 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import { RefreshIcon, ReviewIcon, RightIcon, UserIcon } from '../assets';
 import { HomeLinks } from '../components';
-import userStore from '../store/userStore';
 import YufaabContext from '../context/YufaabContext';
 
 export default function NavBar() {
-  const userToken = userStore((state) => state.userToken);
   const { yufaabInstance } = useContext(YufaabContext);
 
   useEffect(() => {
     const fetchReviews = async () => {
       const res = await yufaabInstance.fetchReviews();
-      console.log(res);
+      console.log(res.status);
     };
     fetchReviews();
   }, []);
@@ -60,7 +58,7 @@ export default function NavBar() {
           <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
             Description 2
           </p>
-          <Link to={`${userToken ? '/details' : '/login'}`}>
+          <Link to="/details">
             <button
               type="button"
               className="flex flex-col z-2 bg-[#fff] text-[#000] w-[150px] h-[40px] rounded-[40px] items-center mx-auto mt-[40px] pt-[8px] shadow-[0_5px_10px_rgba(0, 0, 0, .1)] hover:bg-gradient-to-r from-amber-200 to-yellow-400"
@@ -82,7 +80,7 @@ export default function NavBar() {
           <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
             Description 2
           </p>
-          <Link to={`${userToken ? '/details' : '/login'}`}>
+          <Link to="/details">
             <button
               type="button"
               className="flex flex-col z-2 bg-[#fff] text-[#000] w-[150px] h-[40px] rounded-[40px] items-center mx-auto mt-[40px] pt-[8px] shadow-[0_5px_10px_rgba(0, 0, 0, .1)] hover:bg-gradient-to-r from-amber-200 to-yellow-400"
@@ -104,7 +102,7 @@ export default function NavBar() {
           <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
             Description 2
           </p>
-          <Link to={`${userToken ? '/details' : '/login'}`}>
+          <Link to="/details">
             <button
               type="button"
               className="flex flex-col z-2 bg-[#fff] text-[#000] w-[150px] h-[40px] rounded-[40px] items-center mx-auto mt-[40px] pt-[8px] shadow-[0_5px_10px_rgba(0, 0, 0, .1)] hover:bg-gradient-to-r from-amber-200 to-yellow-400"

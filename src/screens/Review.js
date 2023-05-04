@@ -33,7 +33,9 @@ const Review = () => {
       <h3 className="mx-auto text-[48px] text-[#0098FF] font-semibold mt-[20px]">
         Yufaab
       </h3>
-      <h4 className="flex flex-col mx-auto mt-[20px] font-semibold text-[#33475b] text-[22px]">Write what you feel</h4>
+      <h4 className="flex flex-col mx-auto mt-[20px] font-semibold text-[#33475b] text-[22px]">
+        Write what you feel
+      </h4>
       <div className="flex flex-col mx-auto mt-[20px]">
         <input
           className="mx-auto h-[2.5rem] w-[400px] items-center py-[10px] px-[9px] mb-[15px] bg-[#f5f8fa] rounded-[7px] outline outline-1 outline-[#0098FF] hover:outline-2 text-[#33475b]"

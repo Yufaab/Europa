@@ -25,7 +25,7 @@ export const Category = ({ formData, setFormData }) => {
         name="selectCategory"
         value="OPEN"
         onChange={(e) => {
-          setFormData({ ...formData, category: e.target.value });
+          setFormData({ ...formData, seatType: e.target.value });
         }}
       />
       OPEN
@@ -35,7 +35,7 @@ export const Category = ({ formData, setFormData }) => {
         name="selectCategory"
         value="OBC-NCL"
         onChange={(e) => {
-          setFormData({ ...formData, category: e.target.value });
+          setFormData({ ...formData, seatType: e.target.value });
         }}
       />
       OBC-NCL
@@ -46,7 +46,7 @@ export const Category = ({ formData, setFormData }) => {
         name="selectCategory"
         value="SC"
         onChange={(e) => {
-          setFormData({ ...formData, category: e.target.value });
+          setFormData({ ...formData, seatType: e.target.value });
         }}
       />
       SC
@@ -56,7 +56,7 @@ export const Category = ({ formData, setFormData }) => {
         name="selectCategory"
         value="ST"
         onChange={(e) => {
-          setFormData({ ...formData, category: e.target.value });
+          setFormData({ ...formData, seatType: e.target.value });
         }}
       />
       ST
@@ -66,7 +66,7 @@ export const Category = ({ formData, setFormData }) => {
         name="selectCategory"
         value="EWS"
         onChange={(e) => {
-          setFormData({ ...formData, category: e.target.value });
+          setFormData({ ...formData, seatType: e.target.value });
         }}
       />
       EWS
@@ -76,7 +76,7 @@ export const Category = ({ formData, setFormData }) => {
         name="selectCategory"
         value="OPEN (PwD)"
         onChange={(e) => {
-          setFormData({ ...formData, category: e.target.value });
+          setFormData({ ...formData, seatType: e.target.value });
         }}
       />
       OPEN (PwD)
@@ -96,7 +96,7 @@ export const Category = ({ formData, setFormData }) => {
         name="selectCategory"
         value="SC (PwD)"
         onChange={(e) => {
-          setFormData({ ...formData, category: e.target.value });
+          setFormData({ ...formData, seatType: e.target.value });
         }}
       />
       SC (PwD)
@@ -106,7 +106,7 @@ export const Category = ({ formData, setFormData }) => {
         name="selectCategory"
         value="EWS (PwD)"
         onChange={(e) => {
-          setFormData({ ...formData, category: e.target.value });
+          setFormData({ ...formData, seatType: e.target.value });
         }}
       />
       EWS (PwD)
@@ -116,7 +116,7 @@ export const Category = ({ formData, setFormData }) => {
         name="selectCategory"
         value="ST (PwD)"
         onChange={(e) => {
-          setFormData({ ...formData, category: e.target.value });
+          setFormData({ ...formData, seatType: e.target.value });
         }}
       />
       ST (PwD)
@@ -218,7 +218,13 @@ export const Branches = ({ formData, setFormData }) => {
       <select
         className="w-auto overflow-hidden text-slate-700 p-[5px] rounded-md"
         onChange={(e) => {
-          setFormData({ ...formData, branch: e.target.value });
+          setFormData({
+            ...formData,
+            academicProgramName: [
+              ...formData.academicProgramName,
+              e.target.value,
+            ],
+          });
         }}
       >
         {BranchData.branches2022.map((item) => (
@@ -237,14 +243,68 @@ export const Branches = ({ formData, setFormData }) => {
 export const PreviewOrder = ({ formData }) => {
   return (
     <div className="flex flex-col mt-[20px] text-slate-600">
-      <h3 className={`${formData.rank ? 'pb-2 font-semibold text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`Rank: ${formData.rank ? formData.rank : 'No value selected'}`}</h3>
-      <h3 className={`${formData.category ? 'pb-2 font-semibold text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`Category: ${formData.category ? formData.category : 'No value selected'}`}</h3>
-      <h3 className={`${formData.gender ? 'pb-2 font-semibold  text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`Gender: ${formData.gender ? formData.gender : 'No value selected'}`}</h3>
-      <h3 className={`${formData.categoryRank ? 'pb-2 font-semibold text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`Category Rank: ${formData.categoryRank ? formData.categoryRank : 'No value selected'}`}</h3>
-      <h3 className={`${formData.ispwd ? 'pb-2 font-semibold text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`Is PWD?: ${formData.ispwd ? formData.ispwd : 'No value selected'}`}</h3>
-      <h3 className={`${formData.state ? 'pb-2 font-semibold text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`State: ${formData.state ? formData.state : 'No value selected'}`}</h3>
-      <h3 className={`${formData.branch ? 'pb-2 font-semibold text-[#4BB543]' : 'pb-2 text-[#ff0000]'}`}>{`Branch Preferred: ${formData.branch ? formData.branch : 'No value selected'}`}</h3>
+      <h3
+        className={`${
+          formData.rank
+            ? 'pb-2 font-semibold text-[#4BB543]'
+            : 'pb-2 text-[#ff0000]'
+        }`}
+      >{`Rank: ${formData.rank ? formData.rank : 'No value selected'}`}</h3>
+      <h3
+        className={`${
+          formData.seatType
+            ? 'pb-2 font-semibold text-[#4BB543]'
+            : 'pb-2 text-[#ff0000]'
+        }`}
+      >{`Category: ${
+        formData.seatType ? formData.seatType : 'No value selected'
+      }`}</h3>
+      <h3
+        className={`${
+          formData.gender
+            ? 'pb-2 font-semibold  text-[#4BB543]'
+            : 'pb-2 text-[#ff0000]'
+        }`}
+      >{`Gender: ${
+        formData.gender ? formData.gender : 'No value selected'
+      }`}</h3>
+      <h3
+        className={`${
+          formData.categoryRank
+            ? 'pb-2 font-semibold text-[#4BB543]'
+            : 'pb-2 text-[#ff0000]'
+        }`}
+      >{`Category Rank: ${
+        formData.categoryRank ? formData.categoryRank : 'No value selected'
+      }`}</h3>
+      <h3
+        className={`${
+          formData.state
+            ? 'pb-2 font-semibold text-[#4BB543]'
+            : 'pb-2 text-[#ff0000]'
+        }`}
+      >{`State: ${formData.state ? formData.state : 'No value selected'}`}</h3>
+      <h3
+        className={`${
+          formData.academicProgramName
+            ? 'pb-2 font-semibold text-[#4BB543]'
+            : 'pb-2 text-[#ff0000]'
+        }`}
+      >{`Branch Preferred: ${
+        formData.academicProgramName
+          ? formData.academicProgramName
+          : 'No value selected'
+      }`}</h3>
     </div>
   );
 };
-export default { Rank, Category, CategoryRank, Gender, IsPWD, State, Branches, PreviewOrder };
+export default {
+  Rank,
+  Category,
+  CategoryRank,
+  Gender,
+  IsPWD,
+  State,
+  Branches,
+  PreviewOrder,
+};

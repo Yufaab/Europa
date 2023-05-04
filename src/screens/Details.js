@@ -1,36 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Category,
   CategoryRank,
   Gender,
   Rank,
-  IsPWD,
   State,
   Branches,
-  PreviewOrder
+  PreviewOrder,
 } from '../components/DetailsComponents';
+import userStore from '../store/userStore';
+import orderStore from '../store/orderStore';
+import Payment from '../components/Payments';
 
 function Details() {
   const [page, setPage] = useState(0);
+  const navigate = useNavigate();
+  const userToken = userStore((state) => state.userToken);
+  const setData = orderStore((state) => state.setData);
+  const data = orderStore((state) => state.data);
+
+  console.log(data);
+
   const [formData, setFormData] = useState({
     rank: '',
-    category: '',
+    seatType: '',
     categoryRank: '',
     gender: '',
-    ispwd: '',
     state: '',
-    branch: '',
+    academicProgramName: [],
+    institute: [],
   });
+
+  useEffect(() => {
+    if (data) {
+      setPage(6);
+      setFormData(data);
+    }
+  }, [data]);
 
   const FormTitles = [
     'Enter your rank',
     'Choose your category',
     'Select your gender',
     'Category Rank if applicable',
-    'Are you physically disabled?',
     'Select your State',
     'Select your preferred Branch',
-    'Preview Your Details Carefully'
+    'Preview Your Details Carefully',
   ];
 
   const SwitchPage = () => {
@@ -44,10 +60,8 @@ function Details() {
       case 3:
         return <CategoryRank formData={formData} setFormData={setFormData} />;
       case 4:
-        return <IsPWD formData={formData} setFormData={setFormData} />;
-      case 5:
         return <State formData={formData} setFormData={setFormData} />;
-      case 6:
+      case 5:
         return <Branches formData={formData} setFormData={setFormData} />;
       default:
         return <PreviewOrder formData={formData} />;
@@ -96,19 +110,28 @@ function Details() {
           </button>
           <div>
             {page === FormTitles.length - 1 ? (
-              <button
-                className="h-[40px] w-[200px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[5px] text-[#fff] font-medium pt-1"
-                type="button"
-                onClick={() => {
-                  if (page === FormTitles.length - 1) {
-                    console.log(formData);
-                  } else {
-                    setPage((currPage) => currPage + 1);
-                  }
-                }}
-              >
-                Proceed to Payment
-              </button>
+              <div>
+                {!userToken ? (
+                  <button
+                    className="h-[40px] w-[200px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[5px] text-[#fff] font-medium pt-1"
+                    type="button"
+                    onClick={() => {
+                      if (page === FormTitles.length - 1) {
+                        setData(formData);
+                        if (!userToken) {
+                          navigate('/login');
+                        }
+                      } else {
+                        setPage((currPage) => currPage + 1);
+                      }
+                    }}
+                  >
+                    Payment
+                  </button>
+                ) : (
+                  <Payment />
+                )}
+              </div>
             ) : (
               <button
                 className="h-[40px] w-[70px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[3px] justify-items-center  text-[#fff] font-medium"

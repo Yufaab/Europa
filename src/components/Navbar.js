@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import userStore from '../store/userStore';
+import YufaabContext from '../context/YufaabContext';
 
 export default function NavBar() {
+  const { yufaabInstance } = useContext(YufaabContext);
   const [navbar, setNavbar] = useState(false);
-  const [profile, setProfile] = useState(false);
   const userToken = userStore((state) => state.userToken);
+  const removeToken = userStore((state) => state.removeToken);
+
+  const profileHandler = async () => {
+    if (userToken) {
+      await yufaabInstance.logoutHandler();
+      removeToken();
+    }
+  };
 
   return (
     <nav className="w-full bg-white fixed top-0 first-line:shadow-[0_2px_18px_0_rgba(129,162,182,.2)] h-[72px] border-b-[3px] z-2">
@@ -78,12 +87,10 @@ export default function NavBar() {
           </ul>
         </div>
         <div className=" w-[200px] hidden md:flex md:justify-end">
-          <Link to="/login">
+          <Link to={`${!userToken ? '/login' : '/'}`}>
             <button
               type="button"
-              onClick={() => {
-                setProfile(!profile);
-              }}
+              onClick={profileHandler}
               className="px-4 py-2 text-white bg-[#0098FF] rounded-[100px] hover:bg-sky-700 mt-[20px]"
             >
               {!userToken ? 'Sign In' : 'Log Out'}
