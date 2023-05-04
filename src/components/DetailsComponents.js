@@ -249,52 +249,62 @@ export const PreviewOrder = ({ formData }) => {
             ? 'pb-2 font-semibold text-[#4BB543]'
             : 'pb-2 text-[#ff0000]'
         }`}
-      >{`Rank: ${formData.rank ? formData.rank : 'No value selected'}`}</h3>
+      >
+        {`Rank: ${formData.rank ? formData.rank : 'No value selected'}`}
+      </h3>
       <h3
         className={`${
           formData.seatType
             ? 'pb-2 font-semibold text-[#4BB543]'
             : 'pb-2 text-[#ff0000]'
         }`}
-      >{`Category: ${
-        formData.seatType ? formData.seatType : 'No value selected'
-      }`}</h3>
+      >
+        {`Category: ${
+          formData.seatType ? formData.seatType : 'No value selected'
+        }`}
+      </h3>
       <h3
         className={`${
           formData.gender
             ? 'pb-2 font-semibold  text-[#4BB543]'
             : 'pb-2 text-[#ff0000]'
         }`}
-      >{`Gender: ${
-        formData.gender ? formData.gender : 'No value selected'
-      }`}</h3>
+      >
+        {`Gender: ${formData.gender ? formData.gender : 'No value selected'}`}
+      </h3>
       <h3
         className={`${
           formData.categoryRank
             ? 'pb-2 font-semibold text-[#4BB543]'
             : 'pb-2 text-[#ff0000]'
         }`}
-      >{`Category Rank: ${
-        formData.categoryRank ? formData.categoryRank : 'No value selected'
-      }`}</h3>
+      >
+        {`Category Rank: ${
+          formData.categoryRank ? formData.categoryRank : 'No value selected'
+        }`}
+      </h3>
       <h3
         className={`${
           formData.state
             ? 'pb-2 font-semibold text-[#4BB543]'
             : 'pb-2 text-[#ff0000]'
         }`}
-      >{`State: ${formData.state ? formData.state : 'No value selected'}`}</h3>
+      >
+        {`State: ${formData.state ? formData.state : 'No value selected'}`}
+      </h3>
       <h3
         className={`${
           formData.academicProgramName
             ? 'pb-2 font-semibold text-[#4BB543]'
             : 'pb-2 text-[#ff0000]'
         }`}
-      >{`Branch Preferred: ${
-        formData.academicProgramName
-          ? formData.academicProgramName
-          : 'No value selected'
-      }`}</h3>
+      >
+        {`Branch Preferred: ${
+          formData.academicProgramName
+            ? formData.academicProgramName
+            : 'No value selected'
+        }`}
+      </h3>
     </div>
   );
 };
