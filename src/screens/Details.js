@@ -21,8 +21,6 @@ function Details() {
   const setData = orderStore((state) => state.setData);
   const data = orderStore((state) => state.data);
 
-  console.log(data);
-
   const [formData, setFormData] = useState({
     rank: '',
     seatType: '',
@@ -119,7 +117,7 @@ function Details() {
                   <button
                     className="h-[40px] w-[200px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[5px] text-[#fff] font-medium pt-1"
                     type="button"
-                    onClick={() => {
+                    onClick={async () => {
                       if (page === FormTitles.length - 1) {
                         setData(formData);
                         if (!userToken) {
@@ -133,7 +131,7 @@ function Details() {
                     Payment
                   </button>
                 ) : (
-                  <Payment />
+                  <Payment formData={formData} />
                 )}
               </div>
             ) : (

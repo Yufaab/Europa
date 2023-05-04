@@ -1,11 +1,13 @@
 import React, { useEffect, useContext } from 'react';
 import YufaabContext from '../context/YufaabContext';
 
-const Payment = () => {
+const Payment = ({ formData }) => {
   const { yufaabInstance } = useContext(YufaabContext);
 
   const displayRazorpay = async () => {
     const data = await yufaabInstance.makePayment(1);
+    const res = await yufaabInstance.createOrder(formData);
+    console.log(res);
     const options = {
       key: process.env.REACT_APP_YOUR_KEY_ID,
       currency: data.data.currency,

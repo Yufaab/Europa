@@ -131,7 +131,7 @@ export const Gender = ({ formData, setFormData }) => {
         className="mb-[12px]"
         type="radio"
         name="selectGender"
-        value="Male"
+        value="Gender-Neutral"
         onChange={(e) => {
           setFormData({ ...formData, gender: e.target.value });
         }}
@@ -141,7 +141,7 @@ export const Gender = ({ formData, setFormData }) => {
       <input
         type="radio"
         name="selectGender"
-        value="Female"
+        value="Female-only (including Supernumerary)"
         onChange={(e) => {
           setFormData({ ...formData, gender: e.target.value });
         }}
@@ -339,7 +339,7 @@ export const PreviewOrder = ({ formData }) => {
             : 'pb-2 text-[#ff0000]'
         }`}
       >
-        {`Branch Preferred: ${
+        {`College Preferred: ${
           formData.institute ? formData.institute : 'No value selected'
         }`}
       </h3>

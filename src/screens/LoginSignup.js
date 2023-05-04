@@ -59,18 +59,17 @@ const LoginSinup = () => {
         email: userInput.email,
         password: userInput.password,
       });
-      if (res.status === 201) {
-        setToken(res.data.data.token);
-        if (data) {
-          navigate('/details');
-        } else {
-          navigate('/');
-        }
-      }
     } else {
       res = await yufaabInstance.signUpHandler({ ...userInput });
     }
-    console.log(res);
+    if (res.status === 201) {
+      setToken(res.data.data.token);
+      if (data) {
+        navigate('/details');
+      } else {
+        navigate('/');
+      }
+    }
   };
 
   return (

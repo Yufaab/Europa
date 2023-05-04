@@ -78,7 +78,7 @@ class YufaabInstance {
     try {
       const options = {
         method: 'GET',
-        url: `${this.host}/order/${orderid}`,
+        url: `${this.host}/student/order/${orderid}`,
         headers: {
           Authorization: `JWT ${this.getToken()}`,
         },
@@ -94,13 +94,13 @@ class YufaabInstance {
     try {
       const options = {
         method: 'POST',
-        url: `${this.host}/order`,
+        url: `${this.host}/student/order`,
         headers: {
           Authorization: `JWT ${this.getToken()}`,
         },
         data: {
-          data,
-          isNewMember: true,
+          ...data,
+          isNewOrder: true,
         },
       };
       const response = await axios(options);
@@ -114,7 +114,7 @@ class YufaabInstance {
     try {
       const options = {
         method: 'POST',
-        url: `${this.host}/order`,
+        url: `${this.host}/student/order`,
         headers: {
           Authorization: `JWT ${this.getToken()}`,
         },
