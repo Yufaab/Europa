@@ -53,7 +53,7 @@ export default function NavBar() {
             29
           </h4>
           <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
-            Description 1
+            Wait time upto 4 hours
           </p>
           <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
             Description 2
@@ -75,7 +75,7 @@ export default function NavBar() {
             49
           </h4>
           <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
-            Description 1
+            Wait time upto 30 minutes
           </p>
           <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
             Description 2
@@ -97,10 +97,13 @@ export default function NavBar() {
             99
           </h4>
           <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
-            Description 1
+            One to One Interaction
           </p>
           <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
-            Description 2
+            Wait time upto 30 minutes
+          </p>
+          <p className="flex flex-col text-[#fff] list-none text-[16px] mx-auto items-center">
+            Telegram Access
           </p>
           <Link to="/details">
             <button

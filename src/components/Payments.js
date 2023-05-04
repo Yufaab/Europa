@@ -49,7 +49,7 @@ const Payment = ({ formData }) => {
   return (
     <div>
       <button
-        className="h-[40px] w-[200px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[5px] text-[#fff] font-medium pt-1"
+        className="h-[40px] w-[200px] mt-[165px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[5px] text-[#fff] font-medium pt-1"
         type="button"
         onClick={displayRazorpay}
       >

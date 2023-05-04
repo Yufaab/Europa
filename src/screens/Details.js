@@ -71,37 +71,51 @@ function Details() {
   };
 
   const pageWidth = {
-    0: '12.50%',
-    1: '25.00%',
-    2: '37.50%',
-    3: '50.00%',
-    4: '62.50%',
-    5: '75.00%',
-    6: '87.50%',
+    0: '14.28%',
+    1: '28.56%',
+    2: '42.84%',
+    3: '57.12%',
+    4: '71.40%',
+    5: '85.68%',
+    6: '100.00%',
   };
   return (
-    <div className="flex flex-col mx-auto mt-[200px] h-auto w-[600px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px]">
+    <div
+      className={`flex flex-col mx-auto mt-[180px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px] ${
+        page === FormTitles.length - 1
+          ? 'w-[800px] h-[600px]'
+          : 'w-[600px] h-auto'
+      }`}
+    >
       <h3 className="mx-auto text-[48px] text-[#0098FF] font-semibold mt-[5px]">
         Yufaab
       </h3>
-      <div className="flex mb-[50px] h-[5px] w-[500px] mx-auto">
+      <div
+        className={`${
+          page === FormTitles.length - 1 ? 'mb-[10px]' : 'mb-[50px]'
+        } flex h-[5px] w-[500px] mx-auto`}
+      >
         <div
           className="h-[80%] bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% rounded-[5px] mt-[30px]"
           style={{
-            width: pageWidth[page] || '100%',
+            width: pageWidth[page],
           }}
         />
       </div>
-      <div className="mx-auto h-[400px] w-[500px] flex flex-col shadow-[0_0_15px_1px_rgba(0, 0, 0, 0.4)] rounded-[8px]">
-        <div className="basis-auto flex text-[#000] mt-auto text-[20px]">
+      <div
+        className={`mx-auto h-[400px] flex flex-col shadow-[0_0_15px_1px_rgba(0, 0, 0, 0.4)] rounded-[8px] ${
+          page === FormTitles.length - 1 ? 'w-[700px]' : 'w-[500px]'
+        }`}
+      >
+        <div className="mt-[-20px]' : 'mt-auto'} basis-auto flex text-[#000] text-[20px]">
           <h1>{FormTitles[page]}</h1>
         </div>
-        <div className="basis-[70%]">{SwitchPage()}</div>
+        <div className="basis-[90%]">{SwitchPage()}</div>
         <div className="basis-[10%] flex justify-between">
           <button
             className={`h-[40px] w-[70px] text-center items-center hover:bg-sky-700 bg-[#0098FF] rounded-[100px] p-[3px] justify-items-center text-[#fff] font-medium ${
               page === 0 ? 'cursor-not-allowed' : 'cursor-pointer'
-            }`}
+            } ${page === FormTitles.length - 1 ? 'mt-[165px]' : ''}`}
             disabled={page === 0}
             type="button"
             onClick={() => {
@@ -128,7 +142,7 @@ function Details() {
                       }
                     }}
                   >
-                    Payment
+                    Proceed To Payment
                   </button>
                 ) : (
                   <Payment formData={formData} />

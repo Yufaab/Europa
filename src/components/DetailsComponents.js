@@ -21,7 +21,7 @@ export const Category = ({ formData, setFormData }) => {
   return (
     <div className="mt-[10px] text-slate-700">
       <input
-        className="mb-[12px]"
+        className="mb-[10px]"
         type="radio"
         name="selectCategory"
         value="OPEN"
