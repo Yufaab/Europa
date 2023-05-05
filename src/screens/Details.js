@@ -81,10 +81,12 @@ function Details() {
   };
   return (
     <div
-      className={`flex flex-col mx-auto mt-[180px] shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px] ${
+      className={`flex flex-col mx-auto mt-[180px] ${
         page === FormTitles.length - 1
-          ? 'w-[800px] h-[600px]'
-          : 'w-[600px] h-auto'
+          ? 'pb-[100px]'
+          : 'shadow-[6px_2px_16px_0px_rgba(136,165,191,0.48),rgba(255,255,255,0.8)_-6px_-2px_16px_0px] rounded-[12px]'
+      } ${
+        page === FormTitles.length - 1 ? 'w-[800px] h-auto' : 'w-[600px] h-auto'
       }`}
     >
       <h3 className="mx-auto text-[48px] text-[#0098FF] font-semibold mt-[5px]">
@@ -129,7 +131,7 @@ function Details() {
               <div>
                 {!userToken ? (
                   <button
-                    className="h-[40px] w-[200px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[5px] text-[#fff] font-medium pt-1"
+                    className="h-[40px] w-[200px] mt-[165px] text-center items-center bg-[#0098FF] hover:bg-sky-700 rounded-[100px] p-[5px] text-[#fff] font-medium pt-1"
                     type="button"
                     onClick={async () => {
                       if (page === FormTitles.length - 1) {

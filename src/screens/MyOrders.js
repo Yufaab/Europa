@@ -16,7 +16,7 @@ const MyOrders = () => {
   }, []);
   return (
     <div>
-      <h2 className="mt-[100px] ml-[20px] lg:ml-[40px] text-[22px] text-[#0098FF]">
+      <h2 className="mt-[100px] ml-[20px] lg:ml-[40px] text-[22px] text-[#0098FF] mb-[30px]">
         Your Orders
       </h2>
       {orders.map((ongoingOrder) => (
