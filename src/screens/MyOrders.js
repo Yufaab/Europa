@@ -9,7 +9,6 @@ const MyOrders = () => {
   useEffect(() => {
     const getAllOrders = async () => {
       const res = await yufaabInstance.getAllOrders();
-      console.log(res);
       setOrders(res.data.data.orders);
     };
     getAllOrders();
