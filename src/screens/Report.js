@@ -21,21 +21,19 @@ const Report = () => {
       <h3 className="ml-[20px] lg:ml-[40px] text-[22px] text-[#0098FF] mb-[30px]">
         Report Generated
       </h3>
-      <thead className="mx-auto">
-        <th className="pb-[20px] ">Sr No.</th>
-        <th className="pb-[20px]">Quota</th>
-        <th className="pb-[20px]">Gender</th>
-        <th className="pb-[20px]">Seat Type</th>
-        <th className="pb-[20px]">Academic Programe</th>
-        <th className="pb-[20px]">Institute</th>
-        <th className="pb-[20px]">Opening Rank</th>
-        <th className="pb-[20px]">Closing Rank</th>
-      </thead>
-      <div>
-        {report.map((reports) => (
-          <Table reports={reports} />
+      <table>
+        <thead className="mx-auto">
+          <th className="pb-[20px] ">Sr No.</th>
+          <th className="pb-[20px]">Seat Type</th>
+          <th className="pb-[20px]">Academic Programe</th>
+          <th className="pb-[20px]">Institute</th>
+          <th className="pb-[20px]">Opening Rank</th>
+          <th className="pb-[20px]">Closing Rank</th>
+        </thead>
+        {report.map((reports, index) => (
+          <Table reports={reports} index={index} />
         ))}
-      </div>
+      </table>
     </div>
   );
 };
