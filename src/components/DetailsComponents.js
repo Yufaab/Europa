@@ -306,7 +306,11 @@ export const PreviewOrder = ({ formData }) => {
             : 'pb-2 font-semibold text-[#4BB543]'
         }`}
       >
-        {`Branch Preferred: ${formData.academicProgramName.length ? formData.academicProgramName : 'No value selected'}`}
+        {`Branch Preferred: ${
+          formData.academicProgramName.length
+            ? formData.academicProgramName
+            : 'No value selected'
+        }`}
       </h3>
       <h3
         className={`${
@@ -315,7 +319,9 @@ export const PreviewOrder = ({ formData }) => {
             : 'pb-2 font-semibold text-[#4BB543]'
         }`}
       >
-        {`College Preferred: ${formData.institute.length ? formData.institute : 'No value selected'}`}
+        {`College Preferred: ${
+          formData.institute.length ? formData.institute : 'No value selected'
+        }`}
       </h3>
     </div>
   );

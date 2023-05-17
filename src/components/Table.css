@@ -1,11 +1,11 @@
 .tableClass {
-    border-collapse: collapse;
-    width: 80%;
-    height:auto;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-    color: #4a4a4a;
-  }
+  border-collapse: collapse;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  color: #4a4a4a;
+}
 .input-container {
   display: flex;
   justify-content: center;
@@ -30,7 +30,7 @@
 
 @media only screen and (max-width: 990px) {
   .tableClass,
-  .input-container{
+  .input-container {
     width: 100%;
   }
 }
