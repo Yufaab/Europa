@@ -44,7 +44,7 @@ export default function NavBar() {
       <div className=" flex flex-wrap justify-center pt-10 w-auto items-center pl-[13%] pr-[13%] bg-[#FEFAF0]">
         <div
           id="pricing"
-          className="w-[300px] h-[400px] rounded-[15px] mx-auto items-center overflow-hidden max-w-[300px] bg-gradient-to-r from-emerald-400 to-cyan-400 px-[20px] py-[40px] hover:scale-[1.1] shadow-[0_5px_10px_rgba(0, 0, 0, .1)] transition ease-in-out delay-150"
+          className="w-[300px] h-[400px] sm:mb-8 lg:mb-[20px] rounded-[15px] mx-auto items-center overflow-hidden max-w-[300px] bg-gradient-to-r from-emerald-400 to-cyan-400 px-[20px] py-[40px] hover:scale-[1.1] shadow-[0_5px_10px_rgba(0, 0, 0, .1)] transition ease-in-out delay-150"
         >
           <h2 className="flex flex-col text-[#fff] w-[100px] h-[100px] text-[40px] rounded-[50%] items-center mx-auto z-2 p-0 m-0">
             Basic

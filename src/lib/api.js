@@ -195,6 +195,22 @@ class YufaabInstance {
     }
   }
 
+  async getReport(orderid) {
+    try {
+      const options = {
+        method: 'GET',
+        url: `${this.host}/student/generate/result/${orderid}`,
+        headers: {
+          Authorization: `JWT ${this.getToken()}`,
+        },
+      };
+      const response = await axios(options);
+      return response;
+    } catch (error) {
+      return error;
+    }
+  }
+
   async makePayment(amount) {
     try {
       const options = {

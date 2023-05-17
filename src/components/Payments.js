@@ -1,9 +1,10 @@
 import React, { useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import YufaabContext from '../context/YufaabContext';
 
 const Payment = ({ formData }) => {
   const { yufaabInstance } = useContext(YufaabContext);
-
+  const navigate = useNavigate();
   const displayRazorpay = async () => {
     const data = await yufaabInstance.makePayment(1);
     const res = await yufaabInstance.createOrder(formData);
@@ -15,6 +16,7 @@ const Payment = ({ formData }) => {
       description: 'Yufaab Payment',
       order_id: data.data.id,
       async handler(response) {
+        navigate(`/report/${res.data.data.order._id}`);
         console.log(response);
       },
       prefill: {

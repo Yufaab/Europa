@@ -165,32 +165,6 @@ export const CategoryRank = ({ formData, setFormData }) => {
     </div>
   );
 };
-export const IsPWD = ({ formData, setFormData }) => {
-  return (
-    <div className="mt-[20px]">
-      <input
-        className="mb-[12px]"
-        type="radio"
-        name="selectPWD"
-        value="Yes"
-        onChange={(e) => {
-          setFormData({ ...formData, ispwd: e.target.value });
-        }}
-      />
-      Yes
-      <br />
-      <input
-        type="radio"
-        name="selectPWD"
-        value="No"
-        onChange={(e) => {
-          setFormData({ ...formData, ispwd: e.target.value });
-        }}
-      />
-      No
-    </div>
-  );
-};
 export const State = ({ formData, setFormData }) => {
   return (
     <div className="flex flex-col mt-[20px] text-slate-700">
@@ -238,6 +212,9 @@ export const Branches = ({ formData, setFormData }) => {
           </option>
         ))}
       </select>
+      <div>
+        <h5>{`${formData.academicProgramName} ${''}`}</h5>
+      </div>
     </div>
   );
 };
@@ -264,6 +241,9 @@ export const College = ({ formData, setFormData }) => {
           </option>
         ))}
       </select>
+      <div>
+        <h5>{`${formData.institute} ${''}`}</h5>
+      </div>
     </div>
   );
 };
@@ -321,26 +301,26 @@ export const PreviewOrder = ({ formData }) => {
       </h3>
       <h3
         className={`${
-          formData.academicProgramName
-            ? 'pb-2 font-semibold text-[#4BB543]'
-            : 'pb-2 text-[#ff0000]'
+          formData.academicProgramName.length === 0
+            ? 'pb-2 text-[#ff0000]'
+            : 'pb-2 font-semibold text-[#4BB543]'
         }`}
       >
         {`Branch Preferred: ${
-          formData.academicProgramName
+          formData.academicProgramName.length
             ? formData.academicProgramName
             : 'No value selected'
         }`}
       </h3>
       <h3
         className={`${
-          formData.institute
-            ? 'pb-2 font-semibold text-[#4BB543]'
-            : 'pb-2 text-[#ff0000]'
+          formData.institute.length === 0
+            ? 'pb-2 text-[#ff0000]'
+            : 'pb-2 font-semibold text-[#4BB543]'
         }`}
       >
         {`College Preferred: ${
-          formData.institute ? formData.institute : 'No value selected'
+          formData.institute.length ? formData.institute : 'No value selected'
         }`}
       </h3>
     </div>
@@ -351,7 +331,6 @@ export default {
   Category,
   CategoryRank,
   Gender,
-  IsPWD,
   State,
   Branches,
   College,
